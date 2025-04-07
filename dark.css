@@ -1,0 +1,38 @@
+body.dark-mode {
+  background-color: #111827;
+  color: #ffffff;
+}
+
+body.dark-mode .navbar {
+  background-color: #1f2937;
+}
+
+body.dark-mode .skill-card,
+body.dark-mode .award-card,
+body.dark-mode .education-card,
+body.dark-mode .summary-text {
+  background-color: #1f2937;
+  color: #f9fafb;
+  border-color: #374151;
+}
+
+body.dark-mode .slider {
+  background-color: #4b5563;
+}
+
+body.dark-mode .slider:before {
+  background-color: #f9fafb;
+}
+
+body.dark-mode .social-link i {
+  color: #10B981;
+}
+
+body.dark-mode footer {
+  background-color: #1f2937;
+  color: #d1d5db;
+}
+
+body.dark-mode a {
+  color: #10B981;
+}
