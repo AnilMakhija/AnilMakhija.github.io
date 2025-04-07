@@ -1,126 +1,113 @@
-/* Base styles */
-body {
-  font-family: Arial, sans-serif;
+/* styles.css */
+* {
   margin: 0;
-  background-color: #ffffff;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #F5F5F5;
+  font-family: 'Times New Roman', Times, serif;
   color: #000000;
-  transition: background-color 0.3s, color 0.3s;
+  line-height: 1.5;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: #10B981;
-  color: white;
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); /* Subtle paper texture */
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-
-.hero {
+header {
   text-align: center;
-  padding: 2rem;
+  margin-bottom: 20px;
 }
 
-.section {
-  padding: 2rem;
+header h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.profile-img {
-  width: 200px;
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  border: 4px solid #10B981;
-  border-radius: 10px;
-  margin: 1rem auto;
+header h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.skills-grid, .timeline, .awards-grid {
-  display: grid;
-  gap: 1rem;
+header h3 {
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 10px;
 }
 
-.skill-card, .timeline-item, .award-card, .education-card {
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+header p {
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
-/* Toggle switch */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
+header p a {
+  color: #000000;
+  text-decoration: underline;
 }
 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+hr {
+  border: 0;
+  border-top: 1px solid #000000;
+  margin: 20px 0;
 }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  background-color: #ccc;
-  border-radius: 34px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: 0.4s;
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #10B981;
+  margin-bottom: 10px;
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 4px;
-  bottom: 3px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-input:checked + .slider {
-  background-color: #2196F3;
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
-input:checked + .slider:before {
-  transform: translateX(26px);
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 10px;
 }
 
-/* Dark mode */
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
+ul li {
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
-body.dark-mode .navbar {
-  background-color: #1f1f1f;
+.experience-item {
+  margin-bottom: 20px;
 }
 
-body.dark-mode .navbar a {
-  color: #10B981
+footer {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
 }
 
-body.dark-mode .skill-card,
-body.dark-mode .timeline-item,
-body.dark-mode .award-card,
-body.dark-mode .education-card {
-  background-color: #1f1f1f;
-  border: 1px solid #333;
+footer span {
+  color: #10B981;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    padding: 15px;
+  }
 }
