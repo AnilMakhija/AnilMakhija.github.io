@@ -17,21 +17,26 @@
       background-color: #F5F5F5;
       color: #333;
       line-height: 1.6;
-      display: flex;
       min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
     }
 
     /* Sidebar Menu */
     .sidebar {
       width: 200px;
-      background-color: #10B981;
-      position: sticky;
+      background-color: #800080; /* Consistent purple */
+      position: fixed;
       top: 0;
-      height: 100vh;
+      left: -200px; /* Hidden by default */
+      height: 100%;
       padding: 20px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .sidebar.active {
+      left: 0; /* Slides in when active */
     }
 
     .sidebar ul {
@@ -53,45 +58,68 @@
     }
 
     .sidebar ul li a:hover {
-      background-color: #FFD700; /* Gold hover effect */
-      color: #333;
+      background-color: #DDA0DD; /* Lighter purple for hover */
+      color: #FFFFFF;
     }
 
-    /* Hamburger Menu for Mobile */
+    /* Enhanced Menu Toggle */
     .menu-toggle {
-      display: none;
       font-size: 24px;
       color: #FFFFFF;
       cursor: pointer;
       padding: 10px;
-      background-color: #10B981;
+      background-color: #800080; /* Consistent purple */
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1001;
+      border-radius: 50%; /* Circular background */
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .menu-toggle:hover {
+      background-color: #DDA0DD; /* Lighter purple on hover */
+      transform: scale(1.1); /* Slight scale effect */
     }
 
     /* Main Content */
     .main-content {
-      flex: 1;
       padding: 20px;
-      max-width: 700px;
+      margin-left: 0;
+      transition: margin-left 0.3s ease;
+      max-width: 100%;
+    }
+
+    .main-content.shifted {
+      margin-left: 200px; /* Shifts content when sidebar is open */
     }
 
     /* Header */
     header {
       text-align: center;
-      padding: 20px 0;
+      padding: 80px 0 20px; /* Adjusted height for prominence */
       margin-bottom: 20px;
+      background-color: #FFFFFF;
+      position: relative;
     }
 
     header img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      border: 2px solid #10B981;
+      border: 2px solid #800080; /* Consistent purple */
       margin-bottom: 10px;
     }
 
     header h1 {
-      font-size: 32px;
-      color: #10B981;
+      font-size: 36px; /* Normal case size */
+      color: #800080; /* Consistent purple */
+      font-weight: bold;
       margin-bottom: 5px;
     }
 
@@ -110,7 +138,7 @@
     }
 
     section h2 {
-      color: #10B981;
+      color: #800080; /* Consistent purple */
       font-size: 24px;
       margin-bottom: 10px;
     }
@@ -128,7 +156,7 @@
 
     .skills ul li i {
       margin-right: 10px;
-      color: #10B981;
+      color: #800080; /* Consistent purple */
     }
 
     /* Experience with Technology Icons */
@@ -137,13 +165,13 @@
     }
 
     .experience-item h3 {
-      color: #10B981;
+      color: #800080; /* Consistent purple */
       font-size: 18px;
     }
 
     .experience-item ul li i {
       margin-right: 10px;
-      color: #10B981;
+      color: #800080; /* Consistent purple */
     }
 
     /* Smooth Scroll */
@@ -153,41 +181,29 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      .sidebar {
-        display: none;
-        width: 100%;
-        height: auto;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .sidebar.active {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        background-color: #10B981;
-      }
-
-      .main-content {
-        padding: 10px;
+      header {
+        padding-top: 90px; /* Adjust for hamburger */
       }
 
       header img {
         width: 120px;
         height: 120px;
       }
+
+      .main-content {
+        padding: 10px;
+      }
+
+      .menu-toggle {
+        top: 10px;
+        left: 10px;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="menu-toggle"><i class="fas fa-bars-staggered"></i></div>
   <div class="sidebar">
-    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     <ul>
       <li><a href="#summary">Summary</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -280,20 +296,21 @@
   </div>
 
   <script>
-    // Toggle sidebar on mobile
+    // Toggle sidebar
     const menuToggle = document.querySelector('.menu-toggle');
     const sidebar = document.querySelector('.sidebar');
+    const mainContent = document.querySelector('.main-content');
 
     menuToggle.addEventListener('click', () => {
       sidebar.classList.toggle('active');
+      mainContent.classList.toggle('shifted');
     });
 
     // Close sidebar when clicking a link
     document.querySelectorAll('.sidebar a').forEach(link => {
       link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-          sidebar.classList.remove('active');
-        }
+        sidebar.classList.remove('active');
+        mainContent.classList.remove('shifted');
       });
     });
 
