@@ -143,6 +143,17 @@
       margin-bottom: 10px;
     }
 
+    /* Project Links */
+    .app-link {
+      color: #800080; /* Consistent purple */
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .app-link:hover {
+      color: #DDA0DD; /* Lighter purple on hover */
+    }
+
     /* Skills with Icons */
     .skills ul {
       list-style: none;
@@ -205,11 +216,13 @@
   <div class="menu-toggle"><i class="fas fa-bars-staggered"></i></div>
   <div class="sidebar">
     <ul>
-      <li><a href="#summary">Summary</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#awards">Honors & Awards</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 
@@ -219,75 +232,183 @@
       <img src="https://raw.githubusercontent.com/AnilMakhija/AnilMakhija.github.io/c00ff4c01730f24ea0357244162bc30a2d51c822/anil_makhija.png" alt="Anil Makhija" onerror="this.src='https://via.placeholder.com/150';">
       <h1>Anil Makhija</h1>
       <h2>iOS Developer | Lead Consultant | 10+ Years</h2>
-      <p>Email: <a href="mailto:makhija61@gmail.com">makhija61@gmail.com</a> | Phone: 9510473437</p>
+      <p>Email: <a href="mailto:makhija61@gmail.com">makhija61@gmail.com</a> | Phone: +91 9510473437</p>
     </header>
 
-    <!-- Summary -->
-    <section id="summary">
-      <h2>Summary</h2>
-      <p>Hi, I’m Anil Makhija, a seasoned iOS Developer with over 10 years of experience in delivering scalable mobile applications. Proven iOS Developer with 10+ years of expertise, delivering scalable mobile apps using Swift, SwiftUI, React Native, BLE, and WiFi. Led teams to launch Enphase Enlighten (50,000+ users) and Sydney Health (10,000+ users). Excel in optimizing performance (up to 20% gains), enhancing UI/UX, and innovating in energy and health tech with MVC and MVVM architectures via Agile.</p>
+    <!-- About -->
+    <section id="about">
+      <h2>About</h2>
+      <p>Hello and Welcome! 👋 Thank you for stopping by my portfolio! I’m Anil Makhija, an accomplished iOS Developer and Lead Consultant with over 11 years of experience in mobile app development, specializing in iOS, React Native, and hybrid solutions. Based in Bengaluru, Karnataka, India, I’m passionate about building high-impact, user-centric applications that solve real-world challenges. From leading teams at Enphase Energy to delivering innovative health tech solutions at Legato Health Technologies, my career is defined by technical excellence, Agile leadership, and a commitment to quality. Let’s dive into my journey—scroll down to explore my expertise and projects! 📱</p>
+      <p>I’m a seasoned software engineer with a Master’s in Computer Applications from Hemchandracharya North Gujarat University and a deep-rooted passion for mobile technology. Over the past decade, I’ve evolved from an individual iOS developer to a Lead Consultant, steering cross-functional teams to success in domains like energy monitoring, health tech, and user-focused mobile solutions. Currently, I’m at Enphase Energy (via Encora Innovation Labs), where I lead the development of the Enphase Enlighten app, serving over 50,000 users worldwide. My previous roles at Legato Health Technologies, UST, Synoverge Technologies, and more have honed my skills in software architecture, team collaboration, and Agile delivery.</p>
+      <p><strong>Career Highlights:</strong></p>
+      <ul>
+        <li>Developed 10+ mobile apps, with 3 live on the App Store, including Pinkfluence and Roquette.</li>
+        <li>Expertise in performance optimization, BLE/WiFi integrations, and hybrid development with Cordova.</li>
+        <li>Led Agile sprints and managed version control with GitHub, delivering projects ahead of schedule.</li>
+        <li>Recognized with multiple awards, including "Living Our Values" (Encora, 2023) and "GoAbove" (Legato, 2021-2022).</li>
+      </ul>
+      <p>My mission? To craft robust, scalable apps that enhance user experiences while driving innovation. Let’s connect if you’re seeking a dedicated engineer with a blend of technical prowess and leadership!</p>
     </section>
 
     <!-- Skills -->
     <section id="skills">
       <h2>Skills</h2>
-      <ul>
-        <li><i class="fab fa-swift"></i> <strong>Languages & Frameworks:</strong> Swift, SwiftUI, React Native, React.js, Unity, Objective-C</li>
-        <li><i class="fas fa-code-branch"></i> <strong>Design Architectures:</strong> MVC, MVVM, MVP</li>
-        <li><i class="fas fa-plug"></i> <strong>Technologies:</strong> BLE, WiFi, REST APIs, WebSocket, Offline Control Features (SQLite, Core Data, Realm), Unit Testing, Firebase, UIKit, Core Animation, Auto Layout, Core Data</li>
-        <li><i class="fas fa-tools"></i> <strong>Tools:</strong> Xcode, Git, CI/CD, Postman, Jira, Agile Methodologies</li>
-        <li><i class="fas fa-laptop"></i> <strong>Domains:</strong> Energy Monitoring, Health Tech, Mobile App Development, UI/UX Design</li>
-        <li><i class="fas fa-users"></i> <strong>Soft Skills:</strong> Leadership, Collaboration, Technical Architecture, Analytical Thinking, Excellent Written and Verbal Communication</li>
-      </ul>
+      <p>My 11-year career spans a wide array of projects, from solo development to leading global teams. I’ve mastered tools and frameworks that enable me to deliver efficient, high-quality solutions tailored to diverse needs. My technical confidence, paired with a collaborative spirit, allows me to tackle complex challenges and innovate with precision.</p>
+      <div class="skills">
+        <h3>Frameworks/Libraries</h3>
+        <ul>
+          <li><i class="fab fa-swift"></i> Swift, Objective-C, React Native, Unity, Cordova, Cocoa Touch</li>
+          <li><i class="fas fa-plug"></i> BLE (CoreBluetooth), WiFi Integrations, REST APIs, Offline Control Features</li>
+          <li><i class="fas fa-code"></i> UIKit, Foundation, CoreAnimation, XCTest (Unit Testing), AVFoundation</li>
+          <li><i class="fas fa-tools"></i> Git, CI/CD (Fastlane, Jenkins), Postman, Xcode, App Store Connect</li>
+        </ul>
+        <h3>CI/CD & Version Control</h3>
+        <ul>
+          <li><i class="fab fa-github"></i> GitHub, Git, CI/CD Pipelines, TestFlight, Agile Workflows</li>
+        </ul>
+        <h3>Programming Languages</h3>
+        <ul>
+          <li><i class="fas fa-code"></i> Swift, Objective-C, React Native (JavaScript), Unity (C#)</li>
+        </ul>
+        <h3>Software Development & Project Management Tools</h3>
+        <ul>
+          <li><i class="fas fa-laptop"></i> Xcode, GitHub, Jira, Sourcetree, Figma, Slack, Postman, Visual Studio Code</li>
+        </ul>
+        <h3>Domains</h3>
+        <ul>
+          <li><i class="fas fa-industry"></i> Energy Monitoring, Health Tech, Mobile App Development, UI/UX Design</li>
+        </ul>
+        <h3>Soft Skills</h3>
+        <ul>
+          <li><i class="fas fa-users"></i> Team Leadership, Cross-Functional Collaboration, Technical Architecture</li>
+          <li><i class="fas fa-lightbulb"></i> Problem-Solving, Critical Thinking, Time Management, Agile Methodologies</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>iOS & React Native Projects</h2>
+      <p>Below are some of the mobile applications I’ve developed that are available on the App Store, showcasing my expertise in iOS development with Swift, SwiftUI, React Native, and more.</p>
+      <div class="experience-item">
+        <h3>Enphase Enlighten</h3>
+        <p><strong>Role:</strong> Lead Consultant at Encora Innovation Lab Private Limited (Client: Enphase Energy)</p>
+        <p><strong>Duration:</strong> Aug 2022 - Present | Bengaluru, India</p>
+        <p><strong>Description:</strong> Directed a 6-member team to build this energy monitoring app using Swift, SwiftUI, and Cordova with an MVVM architecture. The app serves 50,000+ users, increasing engagement by 25% through real-time BLE, WiFi, and WebSocket integrations for device communication and chat features. Improved performance by 20% with UIKit, Core Animation, and Auto Layout enhancements, while leveraging Firebase for analytics and push notifications to boost retention. Designed offline BLE control features for uninterrupted use in low-network areas.</p>
+        <p><strong>Technologies:</strong> Swift, SwiftUI, Cordova, MVVM, BLE, WiFi, WebSocket, Core Data, Firebase, UIKit, Core Animation, Auto Layout</p>
+        <p><strong>App Store Link:</strong> <a href="https://apps.apple.com/app/enphase-enlighten/id[app-id]" class="app-link" target="_blank">Enphase Enlighten on App Store</a> (Replace [app-id] with the official App Store ID)</p>
+      </div>
+      <div class="experience-item">
+        <h3>Enphase Installer Toolkit</h3>
+        <p><strong>Role:</strong> Support Role at Encora Innovation Lab Private Limited (Client: Enphase Energy)</p>
+        <p><strong>Duration:</strong> Aug 2022 - Present | Bengaluru, India</p>
+        <p><strong>Description:</strong> Supported the development of this app for solar installers, enabling configuration and management of Enphase systems. Utilized Swift and BLE integrations to provide real-time tools, enhancing installer efficiency within the Enphase ecosystem.</p>
+        <p><strong>Technologies:</strong> Swift, BLE, UIKit</p>
+        <p><strong>App Store Link:</strong> <a href="https://apps.apple.com/app/enphase-installer-toolkit/id[app-id]" class="app-link" target="_blank">Enphase Installer Toolkit on App Store</a> (Replace [app-id] with the official App Store ID)</p>
+      </div>
+      <div class="experience-item">
+        <h3>Roquette</h3>
+        <p><strong>Role:</strong> Software Engineer at Synoverge Technologies Pvt. Ltd.</p>
+        <p><strong>Duration:</strong> Dec 2016 - Nov 2019 | Ahmedabad, India</p>
+        <p><strong>Description:</strong> One of 10+ mobile apps I launched, with 3 still active on the App Store. Developed using Swift, early SwiftUI, and MVC architecture, this app reduced load times by 30% and improved user satisfaction by 20% through UI/UX enhancements. Part of a suite of projects that lifted retention rates by 15% with performance optimizations.</p>
+        <p><strong>Technologies:</strong> Swift, SwiftUI, MVC</p>
+        <p><strong>App Store Link:</strong> <a href="https://apps.apple.com/app/roquette/id[app-id]" class="app-link" target="_blank">Roquette on App Store</a> (Replace [app-id] with the official App Store ID)</p>
+      </div>
+      <div class="experience-item">
+        <h3>Pinkfluence</h3>
+        <p><strong>Role:</strong> iOS App Developer at Techseria</p>
+        <p><strong>Duration:</strong> Aug 2014 - Sep 2015 | Ahmedabad, India</p>
+        <p><strong>Description:</strong> Independently developed this shopping wishlist app using Swift and MVC architecture, overseeing the full lifecycle from concept to launch. Achieved a 20% user adoption increase post-launch and reduced bugs by 15% with unit testing and CI/CD pipelines.</p>
+        <p><strong>Technologies:</strong> Swift, MVC, XCTest, CI/CD</p>
+        <p><strong>App Store Link:</strong> <a href="https://apps.apple.com/app/pinkfluence/id[app-id]" class="app-link" target="_blank">Pinkfluence on App Store</a> (Replace [app-id] with the official App Store ID)</p>
+      </div>
+      <div class="experience-item">
+        <h3>Sydney Health</h3>
+        <p><strong>Role:</strong> Software Engineer at Legato Health Technologies</p>
+        <p><strong>Duration:</strong> Aug 2020 - Jul 2022 | Bengaluru, India</p>
+        <p><strong>Description:</strong> Developed this React Native-based health app with SwiftUI and MVVM, increasing patient engagement by 15% for 10,000+ users with enhanced UI/UX. Optimized REST APIs, reducing latency by 20% for real-time monitoring. Led feature development end-to-end, ensuring stability with unit testing and Agile workflows.</p>
+        <p><strong>Technologies:</strong> React Native, SwiftUI, MVVM, REST APIs</p>
+        <p><strong>App Store Link:</strong> <a href="https://apps.apple.com/app/sydney-health/id[app-id]" class="app-link" target="_blank">Sydney Health on App Store</a> (Replace [app-id] with the official App Store ID)</p>
+      </div>
     </section>
 
     <!-- Experience -->
     <section id="experience">
-      <h2>Experience</h2>
+      <h2>Professional Experience</h2>
       <div class="experience-item">
-        <h3>Lead Consultant, Encora Innovation Lab Private Limited</h3>
-        <p>Aug 2022 - Present | Bangalore, India</p>
-        <p>Client: Enphase Energy</p>
-        <ul>
-          <li><i class="fab fa-swift"></i> Directed a 6-member team to build the Enphase Enlighten app with Swift and SwiftUI, leveraging MVVM to increase energy monitoring engagement by 25% for 50,000+ users.</li>
-          <li><i class="fas fa-wifi"></i> Implemented BLE, WiFi, and WebSocket integrations for real-time chat, reducing connectivity issues by 30%.</li>
-          <li><i class="fab fa-google"></i> Utilized Firebase for analytics and push notifications, enhancing retention strategies.</li>
-          <li><i class="fas fa-cogs"></i> Crafted technical architecture with MVC and MVVM, improving performance by 20%.</li>
-          <li><i class="fas fa-users-cog"></i> Aligned workflows with 4 US-based teams, shortening integration cycles by 20% using Agile.</li>
-        </ul>
+        <h3>Lead Consultant, Enphase Energy (Payroll: Encora Innovation Labs Pvt. Ltd.)</h3>
+        <p>Aug 2022 - Present | Bengaluru, India</p>
+        <p>Led hybrid development of Enphase Enlighten, coordinating with US-based teams using Agile methodologies.</p>
       </div>
       <div class="experience-item">
         <h3>Software Engineer, Legato Health Technologies</h3>
-        <p>Aug 2020 - Jul 2022 | Bangalore, India</p>
-        <p>Projects: Sydney Health</p>
-        <ul>
-          <li><i class="fab fa-react"></i> Created the Sydney Health app using React Native and SwiftUI, boosting patient engagement by 15%.</li>
-          <li><i class="fas fa-server"></i> Streamlined REST APIs, cutting app latency by 20%.</li>
-          <li><i class="fas fa-check"></i> Reviewed 50+ code submissions, strengthening stability by 25%.</li>
-          <li><i class="fab fa-swift"></i> Developed real-time monitoring features, enhancing data accuracy by 15%.</li>
-        </ul>
+        <p>Aug 2020 - Jul 2022 | Bengaluru, India</p>
+        <p>Delivered Sydney Health, optimizing features end-to-end with unit testing and Agile workflows.</p>
       </div>
-      <!-- Add remaining experience items similarly -->
+      <div class="experience-item">
+        <h3>Senior Software Engineer, UST (Client: Legato Health Technologies)</h3>
+        <p>Jan 2020 - Aug 2020 | Bengaluru, India</p>
+        <p>Delivered iOS features ahead of schedule, improving UI responsiveness by 10%.</p>
+      </div>
+      <div class="experience-item">
+        <h3>Software Engineer, Synoverge Technologies Pvt. Ltd.</h3>
+        <p>Dec 2016 - Nov 2019 | Ahmedabad, India</p>
+        <p>Launched 10+ apps, including Roquette and VFS Global, with 3 live on the App Store.</p>
+      </div>
+      <div class="experience-item">
+        <h3>Sr. iOS Developer, AIS Technolabs Pvt. Ltd.</h3>
+        <p>Oct 2015 - Nov 2016 | Ahmedabad, India</p>
+        <p>Integrated Unity into 5+ iOS apps, enhancing interactivity with Cocoa Touch animations.</p>
+      </div>
+      <div class="experience-item">
+        <h3>iOS App Developer, Techseria</h3>
+        <p>Aug 2014 - Sep 2015 | Ahmedabad, India</p>
+        <p>Independently built Pinkfluence, mastering the full development lifecycle.</p>
+      </div>
+      <div class="experience-item">
+        <h3>iOS Development Trainee, Softweb Solutions Inc. - An Avnet Company</h3>
+        <p>Jan 2014 - Jun 2014 | Ahmedabad, India</p>
+        <p>Contributed to OrderCreator using Objective-C during final-year training.</p>
+      </div>
     </section>
 
     <!-- Education -->
     <section id="education">
       <h2>Education</h2>
-      <h3>Master of Computer Applications (M.C.A.)</h3>
-      <p>Hemchandracharya North Gujarat University</p>
-      <p>Aug 2011 - May 2014</p>
-      <p>Focus Areas: Programming Languages and Mobile Application Development</p>
+      <div class="experience-item">
+        <h3>Master of Computer Applications (M.C.A.)</h3>
+        <p>Hemchandracharya North Gujarat University | Aug 2011 - May 2014</p>
+        <p>Focus: Programming Languages, Mobile Application Development</p>
+      </div>
+      <div class="experience-item">
+        <h3>Bachelor of Computer Applications (B.C.A.)</h3>
+        <p>Hemchandracharya North Gujarat University | 2008 - 2011</p>
+        <p>Focus: Programming Languages</p>
+      </div>
     </section>
 
-    <!-- Honors & Awards -->
+    <!-- Awards -->
     <section id="awards">
       <h2>Honors & Awards</h2>
       <ul>
-        <li>Encora Inc - Living Our Values (Mar 2023): Recognized for leadership and technical excellence.</li>
-        <li>Legato Health Technologies - GoAbove (Team Player) (May 2022): Awarded for collaboration.</li>
-        <li>Legato Health Technologies - GoAbove Impact Award (Mar 2022): Honored for innovation.</li>
-        <li>Legato Health Technologies - GoAbove (Individual Contributor) (Apr 2021): Recognized for technical contributions.</li>
+        <li>Living Our Values (Encora Inc., Mar 2023): Leadership and technical excellence.</li>
+        <li>GoAbove Awards (Legato Health Technologies):
+          <ul>
+            <li>Team Player (May 2022)</li>
+            <li>Impact Award (Mar 2022)</li>
+            <li>Individual Contributor (Apr 2021)</li>
+          </ul>
+        </li>
       </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact Info</h2>
+      <p>Email: <a href="mailto:makhija61@gmail.com">makhija61@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/anilmakhija1" class="app-link" target="_blank">www.linkedin.com/in/anilmakhija1</a></p>
+      <p>Phone: +91 9510473437</p>
+      <p>Location: Bengaluru, Karnataka, India</p>
     </section>
 
     <footer>
