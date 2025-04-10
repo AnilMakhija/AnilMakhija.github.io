@@ -25,10 +25,10 @@
     /* Sidebar Menu */
     .sidebar {
       width: 200px;
-      background-color: #800080; /* Consistent purple */
+      background-color: #800080;
       position: fixed;
       top: 0;
-      left: -200px; /* Hidden by default */
+      left: -200px;
       height: 100%;
       padding: 20px 0;
       transition: left 0.3s ease;
@@ -36,7 +36,7 @@
     }
 
     .sidebar.active {
-      left: 0; /* Slides in when active */
+      left: 0;
     }
 
     .sidebar ul {
@@ -58,7 +58,7 @@
     }
 
     .sidebar ul li a:hover {
-      background-color: #DDA0DD; /* Lighter purple for hover */
+      background-color: #DDA0DD;
       color: #FFFFFF;
     }
 
@@ -68,12 +68,12 @@
       color: #FFFFFF;
       cursor: pointer;
       padding: 10px;
-      background-color: #800080; /* Consistent purple */
+      background-color: #800080;
       position: fixed;
       top: 15px;
       left: 15px;
       z-index: 1001;
-      border-radius: 50%; /* Circular background */
+      border-radius: 50%;
       width: 40px;
       height: 40px;
       display: flex;
@@ -83,26 +83,27 @@
     }
 
     .menu-toggle:hover {
-      background-color: #DDA0DD; /* Lighter purple on hover */
-      transform: scale(1.1); /* Slight scale effect */
+      background-color: #DDA0DD;
+      transform: scale(1.1);
     }
 
     /* Main Content */
     .main-content {
-      padding: 20px;
+      padding: 60px 20px 20px; /* Reduced padding-top to minimal, focusing on scroll offset */
       margin-left: 0;
       transition: margin-left 0.3s ease;
       max-width: 100%;
+      z-index: 900;
     }
 
     .main-content.shifted {
-      margin-left: 200px; /* Shifts content when sidebar is open */
+      margin-left: 200px; /* Matches sidebar width */
     }
 
     /* Header */
     header {
       text-align: center;
-      padding: 80px 0 20px; /* Adjusted height for prominence */
+      padding: 20px 0; /* Restored to original padding to keep photo section stable */
       margin-bottom: 20px;
       background-color: #FFFFFF;
       position: relative;
@@ -112,13 +113,13 @@
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      border: 2px solid #800080; /* Consistent purple */
+      border: 2px solid #800080;
       margin-bottom: 10px;
     }
 
     header h1 {
-      font-size: 36px; /* Normal case size */
-      color: #800080; /* Consistent purple */
+      font-size: 36px;
+      color: #800080;
       font-weight: bold;
       margin-bottom: 5px;
     }
@@ -137,77 +138,118 @@
       border-radius: 5px;
     }
 
+    #about {
+      /* Removed extra margin-top to avoid unnecessary shift, handled by scroll offset */
+    }
+
     section h2 {
-      color: #800080; /* Consistent purple */
+      color: #800080;
       font-size: 24px;
       margin-bottom: 10px;
     }
 
     /* Project Links */
     .app-link {
-      color: #800080; /* Consistent purple */
+      color: #800080;
       text-decoration: underline;
       font-weight: bold;
     }
 
     .app-link:hover {
-      color: #DDA0DD; /* Lighter purple on hover */
+      color: #DDA0DD;
     }
 
-    /* Skills with Icons */
-    .skills ul {
-      list-style: none;
+    /* Skills Iconic Format */
+    .skills-section {
+      margin-top: 20px;
     }
 
-    .skills ul li {
-      margin: 10px 0;
+    .skills-category {
+      margin-bottom: 20px;
+      background-color: #E8ECEF;
+      padding: 10px;
+      border-bottom: 2px solid #000;
+    }
+
+    .skills-category h3 {
+      color: #800080;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .skills-icons {
       display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-item {
+      display: flex;
+      flex-direction: column;
       align-items: center;
+      width: 80px;
+      text-align: center;
+      font-size: 12px;
+      color: #333;
     }
 
-    .skills ul li i {
-      margin-right: 10px;
-      color: #800080; /* Consistent purple */
+    .skill-item i {
+      font-size: 24px;
+      margin-bottom: 5px;
     }
 
-    /* Experience with Technology Icons */
-    .experience-item {
-      margin: 15px 0;
-    }
-
-    .experience-item h3 {
-      color: #800080; /* Consistent purple */
-      font-size: 18px;
-    }
-
-    .experience-item ul li i {
-      margin-right: 10px;
-      color: #800080; /* Consistent purple */
-    }
-
-    /* Smooth Scroll */
-    html {
-      scroll-behavior: smooth;
-    }
+    /* Icon Colors */
+    .skill-item .swift { color: #FF6200; } /* Swift orange */
+    .skill-item .objective-c { color: #000000; } /* Objective-C black (proxy) */
+    .skill-item .react { color: #00D8FF; } /* React blue */
+    .skill-item .unity { color: #000000; background: linear-gradient(45deg, #FFFFFF 50%, #000000 50%); -webkit-background-clip: text; color: transparent; } /* Unity white/black gradient (proxy) */
+    .skill-item .github { color: #211F1F; } /* GitHub dark gray */
+    .skill-item .git { color: #F05032; } /* Git red */
+    .skill-item .cicd { color: #800080; } /* CI/CD purple (custom) */
+    .skill-item .postman { color: #FF6C37; } /* Postman orange */
+    .skill-item .xcode { color: #147EFB; } /* Xcode blue (proxy) */
+    .skill-item .appstore { color: #000000; } /* App Store black (proxy) */
+    .skill-item .swiftui { color: #FF6200; } /* SwiftUI orange (same as Swift) */
+    .skill-item .cocoa { color: #000000; } /* Cocoa Touch black (proxy) */
+    .skill-item .corebluetooth { color: #34AADC; } /* CoreBluetooth blue (proxy) */
+    .skill-item .wifi { color: #1E90FF; } /* WiFi blue (proxy) */
+    .skill-item .restapi { color: #FF4500; } /* REST APIs orange-red (proxy) */
+    .skill-item .coredata { color: #800080; } /* CoreData purple (custom) */
+    .skill-item .testflight { color: #147EFB; } /* TestFlight blue (proxy) */
+    .skill-item .jira { color: #0052CC; } /* Jira blue */
+    .skill-item .sourcetree { color: #0052CC; } /* Sourcetree blue (proxy) */
+    .skill-item .figma { color: #F24E1E; } /* Figma red */
+    .skill-item .slack { color: #4A154B; } /* Slack purple */
+    .skill-item .energy { color: #FFD700; } /* Energy Monitoring gold */
+    .skill-item .health { color: #FF0000; } /* Health Tech red */
+    .skill-item .mobile { color: #00FF00; } /* Mobile App Dev green (proxy) */
+    .skill-item .uiux { color: #FF69B4; } /* UI/UX pink (proxy) */
+    .skill-item .leadership { color: #FFA500; } /* Leadership orange */
+    .skill-item .collaboration { color: #32CD32; } /* Collaboration green */
+    .skill-item .architecture { color: #800080; } /* Architecture purple */
+    .skill-item .problem-solving { color: #1E90FF; } /* Problem-Solving blue */
 
     /* Responsive Design */
     @media (max-width: 768px) {
       header {
-        padding-top: 90px; /* Adjust for hamburger */
-      }
-
-      header img {
-        width: 120px;
-        height: 120px;
+        padding-top: 20px; /* Restored to original for mobile */
       }
 
       .main-content {
-        padding: 10px;
+        padding: 60px 10px 20px;
       }
 
-      .menu-toggle {
-        top: 10px;
-        left: 10px;
+      .skills-icons {
+        justify-content: center;
+      }
+
+      .skill-item {
+        width: 60px;
+        font-size: 10px;
+      }
+
+      .skill-item i {
+        font-size: 20px;
       }
     }
   </style>
@@ -216,6 +258,7 @@
   <div class="menu-toggle"><i class="fas fa-bars-staggered"></i></div>
   <div class="sidebar">
     <ul>
+      <li><a href="#"></a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -254,35 +297,75 @@
     <section id="skills">
       <h2>Skills</h2>
       <p>My 11-year career spans a wide array of projects, from solo development to leading global teams. I’ve mastered tools and frameworks that enable me to deliver efficient, high-quality solutions tailored to diverse needs. My technical confidence, paired with a collaborative spirit, allows me to tackle complex challenges and innovate with precision.</p>
-      <div class="skills">
-        <h3>Frameworks/Libraries</h3>
-        <ul>
-          <li><i class="fab fa-swift"></i> Swift, Objective-C, React Native, Unity, Cordova, Cocoa Touch</li>
-          <li><i class="fas fa-plug"></i> BLE (CoreBluetooth), WiFi Integrations, REST APIs, Offline Control Features</li>
-          <li><i class="fas fa-code"></i> UIKit, Foundation, CoreAnimation, XCTest (Unit Testing), AVFoundation</li>
-          <li><i class="fas fa-tools"></i> Git, CI/CD (Fastlane, Jenkins), Postman, Xcode, App Store Connect</li>
-        </ul>
-        <h3>CI/CD & Version Control</h3>
-        <ul>
-          <li><i class="fab fa-github"></i> GitHub, Git, CI/CD Pipelines, TestFlight, Agile Workflows</li>
-        </ul>
-        <h3>Programming Languages</h3>
-        <ul>
-          <li><i class="fas fa-code"></i> Swift, Objective-C, React Native (JavaScript), Unity (C#)</li>
-        </ul>
-        <h3>Software Development & Project Management Tools</h3>
-        <ul>
-          <li><i class="fas fa-laptop"></i> Xcode, GitHub, Jira, Sourcetree, Figma, Slack, Postman, Visual Studio Code</li>
-        </ul>
-        <h3>Domains</h3>
-        <ul>
-          <li><i class="fas fa-industry"></i> Energy Monitoring, Health Tech, Mobile App Development, UI/UX Design</li>
-        </ul>
-        <h3>Soft Skills</h3>
-        <ul>
-          <li><i class="fas fa-users"></i> Team Leadership, Cross-Functional Collaboration, Technical Architecture</li>
-          <li><i class="fas fa-lightbulb"></i> Problem-Solving, Critical Thinking, Time Management, Agile Methodologies</li>
-        </ul>
+      <div class="skills-section">
+        <div class="skills-category">
+          <h3>Programming Languages</h3>
+          <div class="skills-icons">
+            <div class="skill-item"><i class="fab fa-swift swift"></i><span>Swift</span></div>
+            <div class="skill-item"><i class="fab fa-apple objective-c"></i><span>Objective-C</span></div>
+            <div class="skill-item"><i class="fab fa-react react"></i><span>React Native</span></div>
+            <div class="skill-item"><i class="fab fa-unity unity"></i><span>Unity (C#)</span></div>
+          </div>
+        </div>
+        <div class="skills-category">
+          <h3>Tools/Technologies</h3>
+          <div class="skills-icons">
+            <div class="skill-item"><i class="fab fa-github github"></i><span>GitHub</span></div>
+            <div class="skill-item"><i class="fab fa-git git"></i><span>Git</span></div>
+            <div class="skill-item"><i class="fas fa-cogs cicd"></i><span>CI/CD</span></div>
+            <div class="skill-item"><i class="fas fa-plug postman"></i><span>Postman</span></div>
+            <div class="skill-item"><i class="fab fa-apple xcode"></i><span>Xcode</span></div>
+            <div class="skill-item"><i class="fas fa-cloud appstore"></i><span>App Store Connect</span></div>
+          </div>
+        </div>
+        <div class="skills-category">
+          <h3>Frameworks/Libraries</h3>
+          <div class="skills-icons">
+            <div class="skill-item"><i class="fab fa-swift swiftui"></i><span>SwiftUI</span></div>
+            <div class="skill-item"><i class="fab fa-apple cocoa"></i><span>Cocoa Touch</span></div>
+            <div class="skill-item"><i class="fas fa-plug corebluetooth"></i><span>CoreBluetooth</span></div>
+            <div class="skill-item"><i class="fas fa-wifi wifi"></i><span>WiFi</span></div>
+            <div class="skill-item"><i class="fas fa-server restapi"></i><span>REST APIs</span></div>
+            <div class="skill-item"><i class="fas fa-database coredata"></i><span>CoreData</span></div>
+          </div>
+        </div>
+        <div class="skills-category">
+          <h3>CI/CD & Version Control</h3>
+          <div class="skills-icons">
+            <div class="skill-item"><i class="fab fa-github github"></i><span>GitHub</span></div>
+            <div class="skill-item"><i class="fab fa-git git"></i><span>Git</span></div>
+            <div class="skill-item"><i class="fas fa-cogs cicd"></i><span>CI/CD Pipelines</span></div>
+            <div class="skill-item"><i class="fas fa-plane testflight"></i><span>TestFlight</span></div>
+          </div>
+        </div>
+        <div class="skills-category">
+          <h3>Software Development Tools</h3>
+          <div class="skills-icons">
+            <div class="skill-item"><i class="fab fa-apple xcode"></i><span>Xcode</span></div>
+            <div class="skill-item"><i class="fab fa-github jira"></i><span>Jira</span></div>
+            <div class="skill-item"><i class="fas fa-laptop sourcetree"></i><span>Sourcetree</span></div>
+            <div class="skill-item"><i class="fas fa-paint-brush figma"></i><span>Figma</span></div>
+            <div class="skill-item"><i class="fab fa-slack slack"></i><span>Slack</span></div>
+          </div>
+        </div>
+        <div class="skills-category">
+          <h3>Domains</h3>
+          <div class="skills-icons">
+            <div class="skill-item"><i class="fas fa-bolt energy"></i><span>Energy Monitoring</span></div>
+            <div class="skill-item"><i class="fas fa-heartbeat health"></i><span>Health Tech</span></div>
+            <div class="skill-item"><i class="fas fa-mobile-alt mobile"></i><span>Mobile App Dev</span></div>
+            <div class="skill-item"><i class="fas fa-paint-brush uiux"></i><span>UI/UX Design</span></div>
+          </div>
+        </div>
+        <div class="skills-category">
+          <h3>Soft Skills</h3>
+          <div class="skills-icons">
+            <div class="skill-item"><i class="fas fa-users leadership"></i><span>Leadership</span></div>
+            <div class="skill-item"><i class="fas fa-hands-helping collaboration"></i><span>Collaboration</span></div>
+            <div class="skill-item"><i class="fas fa-cogs architecture"></i><span>Architecture</span></div>
+            <div class="skill-item"><i class="fas fa-lightbulb problem-solving"></i><span>Problem-Solving</span></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -435,13 +518,20 @@
       });
     });
 
-    // Smooth scroll behavior
+    // Smooth scroll behavior with offset
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.getBoundingClientRect().top + window.scrollY - 80; // Offset by 80px to account for menu toggle and padding
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+          sidebar.classList.remove('active');
+          mainContent.classList.remove('shifted');
+        }
       });
     });
   </script>
