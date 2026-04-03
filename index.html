@@ -376,107 +376,170 @@ nav{
 .pcard:hover{border-color:var(--bdh);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.28)}
 [data-theme="light"] .pcard:hover{box-shadow:0 12px 32px rgba(0,0,0,.1)}
 
-/* Banner */
+/* ── Banner — gradient bg with realistic iPhone frames ── */
 .pbanner{
-  width:100%;aspect-ratio:16/9;
-  position:relative;overflow:hidden;
-  display:flex;align-items:flex-end;justify-content:center;
-  flex-shrink:0;
+  width:100%; height:200px;
+  position:relative; overflow:hidden; flex-shrink:0;
+  display:flex; align-items:flex-end; justify-content:center;
 }
-.pb-blue  {background:linear-gradient(140deg,#0d1e45 0%,#1a3a7a 100%)}
-.pb-green {background:linear-gradient(140deg,#082318 0%,#103d25 100%)}
-.pb-teal  {background:linear-gradient(140deg,#051e28 0%,#07344a 100%)}
-.pb-purple{background:linear-gradient(140deg,#180828 0%,#2b0e58 100%)}
-.pb-orange{background:linear-gradient(140deg,#281000 0%,#482200 100%)}
-.pb-pink  {background:linear-gradient(140deg,#1c0028 0%,#380048 100%)}
-[data-theme="light"] .pb-blue  {background:linear-gradient(140deg,#dbeafe 0%,#bfdbfe 100%)}
-[data-theme="light"] .pb-green {background:linear-gradient(140deg,#dcfce7 0%,#bbf7d0 100%)}
-[data-theme="light"] .pb-teal  {background:linear-gradient(140deg,#ccfbf1 0%,#99f6e4 100%)}
-[data-theme="light"] .pb-purple{background:linear-gradient(140deg,#ede9fe 0%,#ddd6fe 100%)}
-[data-theme="light"] .pb-orange{background:linear-gradient(140deg,#ffedd5 0%,#fed7aa 100%)}
-[data-theme="light"] .pb-pink  {background:linear-gradient(140deg,#fce7f3 0%,#fbcfe8 100%)}
+/* Gradient presets — dark */
+.pb-blue  {background:linear-gradient(155deg,#08153a 0%,#0f2a6e 60%,#1a3a8a 100%)}
+.pb-green {background:linear-gradient(155deg,#041a0e 0%,#073320 60%,#0a4528 100%)}
+.pb-teal  {background:linear-gradient(155deg,#031620 0%,#052a3c 60%,#074058 100%)}
+.pb-purple{background:linear-gradient(155deg,#100520 0%,#220a48 60%,#300f60 100%)}
+.pb-orange{background:linear-gradient(155deg,#1e0a00 0%,#3a1400 60%,#521e00 100%)}
+.pb-pink  {background:linear-gradient(155deg,#180020 0%,#2e0040 60%,#420058 100%)}
+/* Light mode */
+[data-theme="light"] .pb-blue  {background:linear-gradient(155deg,#eff6ff 0%,#dbeafe 100%)}
+[data-theme="light"] .pb-green {background:linear-gradient(155deg,#f0fdf4 0%,#dcfce7 100%)}
+[data-theme="light"] .pb-teal  {background:linear-gradient(155deg,#f0fdfa 0%,#ccfbf1 100%)}
+[data-theme="light"] .pb-purple{background:linear-gradient(155deg,#faf5ff 0%,#ede9fe 100%)}
+[data-theme="light"] .pb-orange{background:linear-gradient(155deg,#fff7ed 0%,#ffedd5 100%)}
+[data-theme="light"] .pb-pink  {background:linear-gradient(155deg,#fdf2f8 0%,#fce7f3 100%)}
 
-/* Phones inside banner */
+/* Soft bottom fade so card body bleeds in cleanly */
+.pbanner::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:60px;
+  background:linear-gradient(to bottom,transparent,var(--bg));
+  pointer-events:none;z-index:2;
+}
+[data-theme="light"] .pbanner::after{background:linear-gradient(to bottom,transparent,var(--bg))}
+
+/* Phones row sitting at bottom of banner */
 .pphones{
-  position:absolute;inset:0;
-  display:flex;align-items:flex-end;justify-content:center;
-  gap:8px;overflow:hidden;pointer-events:none;
+  position:absolute; bottom:0; left:0; right:0;
+  display:flex; align-items:flex-end; justify-content:center;
+  gap:10px; padding:0 16px; z-index:1;
 }
+
+/* iPhone mockup frame */
 .pphone{
-  width:clamp(55px,11%,76px);height:90%;
-  border-radius:12px 12px 0 0;
-  border:1.5px solid rgba(255,255,255,.13);
-  background:#090910;overflow:hidden;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.4rem;color:rgba(255,255,255,.2);
+  flex-shrink:0;
+  width:64px; height:128px;
+  border-radius:14px;
+  background:#0a0a12;
+  border:2px solid rgba(255,255,255,0.18);
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.8),
+    inset 0 0 0 1px rgba(255,255,255,0.04),
+    0 16px 40px rgba(0,0,0,0.7),
+    0 4px 12px rgba(0,0,0,0.5);
+  position:relative; overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.6rem; color:rgba(255,255,255,0.15);
 }
-.pphone img{width:100%;height:100%;object-fit:cover;border-radius:11px 11px 0 0}
-[data-theme="light"] .pphone{background:#eeeef5;border-color:rgba(0,0,0,.1);color:rgba(0,0,0,.18)}
+/* Dynamic island notch */
+.pphone::before{
+  content:'';position:absolute;top:5px;left:50%;
+  transform:translateX(-50%);
+  width:22px;height:6px;
+  background:#000;border-radius:6px;z-index:10;
+}
+/* Screen glare */
+.pphone::after{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:40%;
+  background:linear-gradient(to bottom,rgba(255,255,255,0.06),transparent);
+  pointer-events:none;z-index:5;border-radius:12px 12px 0 0;
+}
+.pphone img{
+  width:100%;height:100%;object-fit:cover;
+  position:absolute;top:0;left:0;
+  border-radius:12px;
+}
+/* Middle phone slightly taller = depth */
+.pphones .pphone:nth-child(2){height:148px;width:70px;z-index:3}
+.pphones .pphone:nth-child(1),
+.pphones .pphone:nth-child(3){height:120px;opacity:.85;z-index:2}
+[data-theme="light"] .pphone{
+  background:#f0f0f8;
+  border-color:rgba(0,0,0,0.2);
+  box-shadow:0 0 0 1px rgba(0,0,0,0.1),0 8px 24px rgba(0,0,0,0.15);
+  color:rgba(0,0,0,0.15);
+}
+[data-theme="light"] .pphone::before{background:rgba(0,0,0,0.15)}
 
-/* Small icon top-left */
+/* Small app icon overlay — bottom left of banner */
 .pbico{
-  position:absolute;top:10px;left:12px;
-  width:38px;height:38px;border-radius:9px;
-  overflow:hidden;border:1.5px solid rgba(255,255,255,.14);
-  background:var(--bg2);box-shadow:0 2px 8px rgba(0,0,0,.4);
-  display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+  position:absolute;bottom:14px;left:14px;z-index:4;
+  width:42px;height:42px;border-radius:10px;
+  overflow:hidden;
+  border:1.5px solid rgba(255,255,255,0.16);
+  background:var(--bg2);
+  box-shadow:0 4px 12px rgba(0,0,0,0.5),0 1px 3px rgba(0,0,0,0.4);
+  display:flex;align-items:center;justify-content:center;font-size:1.2rem;
 }
-.pbico img{width:100%;height:100%;object-fit:cover}
+.pbico img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+[data-theme="light"] .pbico{border-color:rgba(0,0,0,0.12);box-shadow:0 4px 12px rgba(0,0,0,0.15)}
 
-/* Badge top-right */
+/* App Store badge — bottom right */
 .pbbadge{
-  position:absolute;top:10px;right:10px;
-  background:rgba(255,255,255,.1);backdrop-filter:blur(6px);
-  border:.5px solid rgba(255,255,255,.14);
-  border-radius:5px;padding:2px 7px;
-  font-size:.58rem;font-weight:700;color:rgba(255,255,255,.82);
-  letter-spacing:.06em;text-transform:uppercase;
+  position:absolute;bottom:14px;right:12px;z-index:4;
+  display:inline-flex;align-items:center;gap:4px;
+  background:rgba(0,0,0,0.45);backdrop-filter:blur(8px);
+  border:.5px solid rgba(255,255,255,0.16);
+  border-radius:6px;padding:3px 8px;
+  font-size:.58rem;font-weight:700;
+  color:rgba(255,255,255,0.9);
+  letter-spacing:.05em;text-transform:uppercase;
 }
-[data-theme="light"] .pbbadge{background:rgba(0,0,0,.08);border-color:rgba(0,0,0,.1);color:var(--ts)}
+[data-theme="light"] .pbbadge{
+  background:rgba(255,255,255,0.72);
+  border-color:rgba(0,0,0,0.12);
+  color:var(--ts);
+}
 
-/* Card body */
-.pbody{padding:clamp(14px,3vw,20px);display:flex;flex-direction:column;gap:10px;flex:1}
+/* ── Card body ── */
+.pbody{
+  padding:clamp(14px,3vw,20px);
+  display:flex;flex-direction:column;gap:10px;flex:1;
+}
 
-/* App icon + title row */
+/* App icon (large) + title */
 .phdr{display:flex;align-items:flex-start;gap:12px}
 .paico{
-  width:50px;height:50px;border-radius:12px;overflow:hidden;flex-shrink:0;
+  width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0;
   border:.5px solid var(--bd);background:var(--bg2);
   display:flex;align-items:center;justify-content:center;font-size:1.5rem;
+  box-shadow:0 2px 8px rgba(0,0,0,0.2);
 }
-.paico img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.paico img{width:100%;height:100%;object-fit:cover;border-radius:11px}
 .phtxt{flex:1;min-width:0}
 .ptitle{font-family:var(--fd);font-size:var(--tx3);font-weight:400;line-height:1.2}
 .pco{font-size:var(--tx0);font-weight:600;color:var(--ac);text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
 
-/* Rating + store btn */
+/* Rating + store button row */
 .prow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .prat{display:flex;align-items:center;gap:3px;font-size:var(--tx0);font-weight:600;color:var(--ts)}
-.stars{color:#f59e0b;font-size:.66rem}
+.stars{color:#f59e0b;font-size:.66rem;letter-spacing:1px}
 .psbtn{
   display:inline-flex;align-items:center;gap:5px;
-  padding:4px 10px;border-radius:100px;
+  padding:5px 12px;border-radius:100px;
   background:var(--ac);color:#fff;
   font-size:.66rem;font-weight:700;letter-spacing:.04em;
-  border:none;transition:background .2s;text-decoration:none;white-space:nowrap;
+  border:none;transition:background .2s,transform .15s;
+  text-decoration:none;white-space:nowrap;
 }
-.psbtn:hover{background:var(--ach)}
+.psbtn:hover{background:var(--ach);transform:scale(1.04)}
 .psbtn svg{width:9px;height:9px;fill:currentColor;flex-shrink:0}
 
-.pdesc{font-size:var(--tx1);color:var(--ts);line-height:1.68;flex:1}
-.pmets{display:flex;gap:14px;padding-top:10px;border-top:.5px solid var(--bd)}
+.pdesc{font-size:var(--tx1);color:var(--ts);line-height:1.7;flex:1}
+
+.pmets{
+  display:flex;gap:14px;padding-top:10px;
+  border-top:.5px solid var(--bd);
+}
 .pm{display:flex;flex-direction:column;gap:1px}
 .pmv{font-family:var(--fd);font-size:var(--tx3);font-weight:400;color:var(--ac);line-height:1.1}
 .pml{font-size:var(--tx0);font-weight:500;color:var(--tm);text-transform:uppercase;letter-spacing:.05em}
+
 .ptechs{display:flex;flex-wrap:wrap;gap:5px}
 .tech{
   padding:3px 8px;border-radius:4px;
   font-size:var(--tx0);font-weight:500;
   background:var(--bg2);border:.5px solid var(--bd);color:var(--ts);
 }
-
-/* Apple logo SVG path shorthand */
-.apl{viewBox:0 0 814 1000;display:inline}
 
 /* ─────────────────────────────────────────
    AWARDS
@@ -783,6 +846,86 @@ footer{
 </section>
 
 <!-- PROJECTS -->
+<style>
+/* ── iPhone mockup frame ── */
+.iphone{
+  width:110px;height:220px;flex-shrink:0;
+  background:#0a0a12;
+  border-radius:22px;
+  border:2px solid rgba(255,255,255,0.22);
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,.9),
+    inset 0 0 0 1px rgba(255,255,255,.04),
+    0 24px 60px rgba(0,0,0,.8),
+    0 8px 20px rgba(0,0,0,.5);
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+}
+/* dynamic island */
+.iphone::before{
+  content:'';position:absolute;top:7px;left:50%;
+  transform:translateX(-50%);
+  width:28px;height:7px;
+  background:#000;border-radius:8px;z-index:20;
+}
+/* glass glare */
+.iphone::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:35%;
+  background:linear-gradient(180deg,rgba(255,255,255,.07),transparent);
+  border-radius:20px 20px 0 0;pointer-events:none;z-index:19;
+}
+.iscreen{
+  margin:18px 4px 4px;
+  flex:1;border-radius:16px;overflow:hidden;
+  position:relative;
+  font-size:0;line-height:0;
+}
+/* side phone smaller */
+.iphone.side{
+  width:92px;height:185px;
+  border-radius:18px;opacity:.75;
+  box-shadow:0 0 0 1px rgba(0,0,0,.9),0 12px 32px rgba(0,0,0,.6);
+}
+.iphone.side::before{width:22px;height:6px}
+.iphone.side .iscreen{margin:16px 3px 3px}
+[data-theme="light"] .iphone{background:#1a1a2e;border-color:rgba(255,255,255,.28)}
+
+/* phones row */
+.phonerow{
+  position:absolute;inset:0;
+  display:flex;align-items:flex-end;justify-content:center;
+  gap:10px;padding:0 12px;z-index:1;
+  pointer-events:none;
+}
+/* banner bottom fade */
+.pbanner::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:55px;
+  background:linear-gradient(transparent,var(--bg));z-index:2;pointer-events:none;
+}
+[data-theme="light"] .pbanner::after{background:linear-gradient(transparent,var(--bg))}
+
+/* app icon badge top-left */
+.pbico{
+  position:absolute;bottom:18px;left:14px;z-index:4;
+  width:40px;height:40px;border-radius:9px;overflow:hidden;
+  border:1.5px solid rgba(255,255,255,.18);
+  background:#fff;
+  box-shadow:0 4px 14px rgba(0,0,0,.5);
+  display:flex;align-items:center;justify-content:center;
+}
+.pbico img{width:100%;height:100%;object-fit:cover;border-radius:7px}
+/* badge top-right */
+.pbbadge{
+  position:absolute;bottom:18px;right:12px;z-index:4;
+  display:inline-flex;align-items:center;gap:4px;
+  background:rgba(0,0,0,.5);backdrop-filter:blur(8px);
+  border:.5px solid rgba(255,255,255,.18);border-radius:6px;
+  padding:3px 8px;font-size:.57rem;font-weight:700;
+  color:rgba(255,255,255,.9);letter-spacing:.05em;text-transform:uppercase;
+}
+[data-theme="light"] .pbbadge{background:rgba(255,255,255,.75);border-color:rgba(0,0,0,.12);color:var(--ts)}
+</style>
+
 <section id="projects">
   <div class="wrap">
     <span class="eyebrow reveal">Featured Projects</span>
@@ -1026,7 +1169,7 @@ footer{
     <p class="ssub reveal">Open to senior &amp; lead iOS roles. Happy to discuss your product challenges.</p>
     <div class="cgrid">
       <div class="clist reveal">
-        <a href="mailto:makhija61@gmail.com" class="crow"><div class="cico2">✉️</div><div><div class="clb">Email</div><div class="cvl">makhija61@gmail.com</div></div></a>
+        <a href="/cdn-cgi/l/email-protection#92fff3f9fafbf8f3a4a3d2f5fff3fbfebcf1fdff" class="crow"><div class="cico2">✉️</div><div><div class="clb">Email</div><div class="cvl"><span class="__cf_email__" data-cfemail="761b171d1e1f1c17404736111b171f1a5815191b">[email&#160;protected]</span></div></div></a>
         <a href="tel:+919510473437" class="crow"><div class="cico2">📱</div><div><div class="clb">Phone</div><div class="cvl">+91 95104 73437</div></div></a>
         <a href="https://www.linkedin.com/in/anilmakhija1/" target="_blank" class="crow"><div class="cico2">🔗</div><div><div class="clb">LinkedIn</div><div class="cvl">linkedin.com/in/anilmakhija1</div></div></a>
         <a href="https://anilmakhija.github.io/" target="_blank" class="crow"><div class="cico2">🌐</div><div><div class="clb">Portfolio</div><div class="cvl">anilmakhija.github.io</div></div></a>
@@ -1053,11 +1196,11 @@ footer{
   <div class="fls">
     <a href="https://www.linkedin.com/in/anilmakhija1/" target="_blank">LinkedIn</a>
     <a href="https://anilmakhija.github.io/" target="_blank">Portfolio</a>
-    <a href="mailto:makhija61@gmail.com">Email</a>
+    <a href="/cdn-cgi/l/email-protection#620f03090a0b0803545322050f030b0e4c010d0f">Email</a>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ── Theme toggle ─────────────────────── */
 var H = document.documentElement;
 var tb = document.getElementById('ttheme');
@@ -1120,31 +1263,35 @@ function sendForm() {
   ['fn','ln','em','sub','msg'].forEach(function(id) { document.getElementById(id).value = ''; });
 }
 
-/* ── Load App Store icons + screenshots ─ */
+/* ── Load App Store icons + iOS screenshots only ─ */
 var apps = [
-  { id:'787415770',  icons:['ico-en','bico-en'],   shots:['ss-en-0','ss-en-1','ss-en-2'] },
-  { id:'1476822720', icons:['ico-sm','bico-sm'],   shots:['ss-sm-0','ss-sm-1','ss-sm-2'] },
+  { id:'787415770',  icons:['ico-en','bico-en'],   shots:['ss-en-0','ss-en-1','ss-en-2']   },
+  { id:'1476822720', icons:['ico-sm','bico-sm'],   shots:['ss-sm-0','ss-sm-1','ss-sm-2']   },
   { id:'1474232533', icons:['ico-360','bico-360'], shots:['ss-360-0','ss-360-1','ss-360-2'] },
-  { id:'1463423283', icons:['ico-sy','bico-sy'],   shots:['ss-sy-0','ss-sy-1','ss-sy-2'] },
-  { id:'1334689402', icons:['ico-ro','bico-ro'],   shots:['ss-ro-0','ss-ro-1'] },
+  { id:'1463423283', icons:['ico-sy','bico-sy'],   shots:['ss-sy-0','ss-sy-1','ss-sy-2']   },
+  { id:'1334689402', icons:['ico-ro','bico-ro'],   shots:['ss-ro-0','ss-ro-1']             },
 ];
 apps.forEach(function(app) {
-  fetch('https://itunes.apple.com/lookup?id=' + app.id + '&country=us')
+  fetch('https://itunes.apple.com/lookup?id=' + app.id + '&country=us&entity=software&limit=1')
     .then(function(r) { return r.json(); })
     .then(function(d) {
       if (!d.results || !d.results[0]) return;
       var r = d.results[0];
-      var icon = r.artworkUrl512 || r.artworkUrl100;
-      var shots = r.screenshotUrls || [];
+      var icon = r.artworkUrl512 || r.artworkUrl100 || r.artworkUrl60;
+      /* screenshotUrls = iPhone, ipadScreenshotUrls = iPad — we want iPhone only */
+      var shots = (r.screenshotUrls && r.screenshotUrls.length > 0) ? r.screenshotUrls : [];
       /* fill icons */
       app.icons.forEach(function(elId) {
         var el = document.getElementById(elId);
-        if (el && icon) el.innerHTML = '<img src="' + icon + '" alt="icon" loading="lazy">';
+        if (el && icon) el.innerHTML = '<img src="' + icon + '" alt="app icon" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">';
       });
-      /* fill phone screenshots */
+      /* fill phone mockups with iPhone screenshots */
       app.shots.forEach(function(elId, i) {
         var el = document.getElementById(elId);
-        if (el && shots[i]) el.innerHTML = '<img src="' + shots[i] + '" alt="screenshot" loading="lazy">';
+        if (el && shots[i]) {
+          el.innerHTML = '<img src="' + shots[i] + '" alt="screenshot" loading="lazy" style="width:100%;height:100%;object-fit:cover;">';
+          el.style.fontSize = '0';
+        }
       });
     })
     .catch(function() {});
