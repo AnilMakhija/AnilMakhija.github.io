@@ -21,7 +21,7 @@
   --shc:0 8px 40px rgba(0,0,0,.55);
   --r:14px;--rl:20px;
   --s2:clamp(14px,3vw,24px);--s3:clamp(24px,5vw,52px);
-  --s4:clamp(40px,7vw,88px);--s5:clamp(64px,9vw,120px);
+  --s4:clamp(40px,7vw,88px);--s5:clamp(76px,10vw,132px);
   --x0:clamp(.7rem,1.5vw,.76rem);--x1:clamp(.84rem,2vw,.92rem);
   --x2:clamp(.96rem,2.3vw,1.06rem);--x3:clamp(1.12rem,2.8vw,1.28rem);
   --x4:clamp(1.4rem,3.6vw,1.9rem);--x5:clamp(1.85rem,4.6vw,2.8rem);
@@ -121,12 +121,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .auth-co:hover{border-color:var(--ac);color:var(--ac)}
 
 /* ── IMPACT NUMBERS — dedicated section, BIG ── */
-#impact{background:var(--bg2)}
+#impact{background:var(--bg2);border-top:1px solid var(--bd)}
 .impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:var(--s3);border:.5px solid var(--bd);border-radius:var(--rl);overflow:hidden;box-shadow:var(--sh)}
-.imet{padding:clamp(24px,4vw,44px) clamp(20px,3vw,36px);text-align:center;border-right:.5px solid var(--bd);position:relative;background:var(--bg);transition:background .25s}
+.imet{padding:clamp(28px,5vw,56px) clamp(16px,3vw,32px);text-align:center;border-right:.5px solid var(--bd);position:relative;background:var(--bg);transition:all .25s}
 .imet:last-child{border-right:none}
+.imet:hover{background:var(--ag);box-shadow:inset 0 0 0 2px var(--ac)}
+.imet:hover .imet-num{color:var(--ach);transform:scale(1.04);display:block}
 .imet:hover{background:var(--bgc)}
-.imet-num{font-family:var(--fd);font-size:clamp(2.4rem,5vw,4rem);font-weight:400;color:var(--ac);line-height:1;display:block;margin-bottom:8px}
+.imet-num{font-family:var(--fd);font-size:clamp(2.8rem,6.5vw,5rem);font-weight:400;color:var(--ac);line-height:1;display:block;margin-bottom:10px;letter-spacing:-.04em;transition:transform .2s,color .2s}
 .imet-lbl{font-size:var(--x1);color:var(--ts);line-height:1.4}
 .imet-sub{font-size:var(--x0);color:var(--tm);margin-top:4px}
 
@@ -148,7 +150,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .law-d{font-size:var(--x0);color:var(--ts);margin-top:1px}
 
 /* ── WHY ME ── */
-#whyme{background:var(--bg2)}
+#whyme{background:var(--bg2);border-top:1px solid var(--bd)}
 .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:var(--s3)}
 .why-card{background:var(--bg);border:.5px solid var(--bd);border-radius:var(--r);padding:clamp(20px,3.5vw,32px);transition:all .3s;display:flex;flex-direction:column;gap:10px;box-shadow:var(--sh)}
 .why-card:hover{border-color:var(--ac);transform:translateY(-4px);box-shadow:0 12px 40px rgba(37,99,235,.14)}
@@ -187,30 +189,73 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 
 /* ── EXPERIENCE ── */
 .tl{margin-top:var(--s3);display:flex;flex-direction:column;position:relative}
-/* LEFT GRADIENT TIMELINE — unique identity element */
-.tl::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:2px;
-  background:linear-gradient(to bottom,var(--ac) 0%,rgba(37,99,235,.4) 60%,rgba(37,99,235,.1) 100%);
-  border-radius:2px}
-.tli{display:flex;flex-direction:column;gap:6px;padding-left:30px;position:relative;padding-bottom:clamp(24px,4vw,40px)}
+/* LEFT GRADIENT TIMELINE */
+.tl::before{
+  content:'';position:absolute;
+  left:7px;top:12px;bottom:12px;width:2px;
+  background:linear-gradient(to bottom,var(--ac) 0%,rgba(37,99,235,.35) 70%,rgba(37,99,235,.08) 100%);
+  border-radius:2px;
+}
+/* Each item: enough left padding for dot (16px) + gap (20px) = 36px */
+.tli{
+  display:flex;flex-direction:column;gap:8px;
+  padding-left:40px;position:relative;
+  padding-bottom:clamp(28px,4vw,44px);
+}
 .tli:last-child{padding-bottom:0}
-.tdo{position:absolute;left:0;top:4px;width:14px;height:14px;border-radius:50%;
-  background:var(--ac);border:3px solid var(--bg);z-index:2;
-  box-shadow:0 0 0 3px rgba(37,99,235,.2),0 0 12px rgba(37,99,235,.35)}
-.tli:first-child .tdo{box-shadow:0 0 0 4px rgba(37,99,235,.25),0 0 20px rgba(37,99,235,.5)}
-.tmt{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
-.tdt{font-size:var(--x0);font-weight:600;color:var(--atx);background:var(--at);border:none;padding:2px 9px;border-radius:4px}
-.tcp{font-size:var(--x0);font-weight:600;color:var(--ts)}
-.tcd{background:var(--bgc);border:.5px solid var(--bd);border-radius:var(--r);padding:clamp(16px,3vw,26px);transition:border-color .2s;box-shadow:var(--sh)}
-.tcd:hover{border-color:var(--ac)}
-.trl{font-family:var(--fd);font-size:var(--x3);font-weight:400;margin-bottom:3px}
-.tcl{font-size:var(--x0);font-weight:600;color:var(--ac);text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
-.tps{list-style:none;display:flex;flex-direction:column;gap:7px}
-.tps li{font-size:var(--x1);color:var(--ts);padding-left:14px;position:relative;line-height:1.65}
-.tps li::before{content:'&#8594;';position:absolute;left:0;color:var(--ac);font-size:.7rem;top:4px}
-.mb{display:inline-block;padding:1px 7px;border-radius:4px;background:var(--at);color:var(--atx);font-size:.72rem;font-weight:600;margin-left:5px;white-space:nowrap}
+/* Dot centered on the line (left:7px means center at 8px, dot width 16px so left:-1px) */
+.tdo{
+  position:absolute;left:0;top:6px;
+  width:16px;height:16px;border-radius:50%;
+  background:var(--ac);border:3px solid var(--bg);
+  z-index:2;flex-shrink:0;
+  box-shadow:0 0 0 3px rgba(37,99,235,.18),0 0 10px rgba(37,99,235,.28);
+}
+.tli:first-child .tdo{box-shadow:0 0 0 4px rgba(37,99,235,.22),0 0 18px rgba(37,99,235,.45)}
+/* Date + company row */
+.tmt{display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-height:24px}
+.tdt{
+  font-size:var(--x0);font-weight:600;color:var(--atx);
+  background:var(--at);border:none;
+  padding:3px 10px;border-radius:5px;white-space:nowrap;
+}
+.tcp{font-size:var(--x1);font-weight:600;color:var(--ts)}
+/* Card */
+.tcd{
+  background:var(--bgc);border:.5px solid var(--bd);
+  border-radius:var(--r);
+  padding:clamp(18px,3vw,28px);
+  transition:border-color .22s,box-shadow .22s;
+  box-shadow:var(--sh);
+}
+.tcd:hover{border-color:var(--ac);box-shadow:0 4px 24px rgba(37,99,235,.1),var(--sh)}
+/* Role title */
+.trl{font-family:var(--fd);font-size:var(--x3);font-weight:400;line-height:1.3;margin-bottom:4px}
+/* Company sub-label */
+.tcl{
+  font-size:var(--x0);font-weight:600;color:var(--ac);
+  text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px;
+}
+/* Bullet list */
+.tps{list-style:none;display:flex;flex-direction:column;gap:8px}
+.tps li{
+  font-size:var(--x1);color:var(--ts);
+  padding-left:16px;position:relative;line-height:1.68;
+}
+.tps li::before{
+  content:'\2192';position:absolute;left:0;
+  color:var(--ac);font-size:.7rem;top:4px;
+}
+/* Metric badge inline */
+.mb{
+  display:inline-block;padding:1px 8px;border-radius:4px;
+  background:var(--at);color:var(--atx);
+  font-size:.72rem;font-weight:600;margin-left:6px;white-space:nowrap;
+  vertical-align:middle;
+}
 
 /* ── PROJECTS / CASE STUDIES ── */
-#projects{background:var(--bg2)}
+#projects{background:var(--bg2);border-top:1px solid var(--bd)}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:var(--s3)}
 .pc{background:var(--bg);border:.5px solid var(--bd);border-radius:var(--rl);overflow:hidden;display:flex;flex-direction:column;transition:all .3s;box-shadow:var(--sh)}
 .pc:hover{border-color:var(--ac);transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,.32),0 0 0 1px rgba(37,99,235,.22),0 0 28px rgba(37,99,235,.07)}
@@ -392,11 +437,12 @@ footer{padding:var(--s2) var(--s3);border-top:.5px solid var(--bd);display:flex;
     </p>
 
     <div class="hcreds">
-      <div class="hcred"><span class="ck">&#10003;</span>Swift, SwiftUI, MVVM &mdash; Expert level, 11+ years</div>
+      <div class="hcred"><span class="ck">&#10003;</span>Swift, SwiftUI, MVVM &mdash; Expert, 11 years production, 11+ years</div>
       <div class="hcred"><span class="ck">&#10003;</span>Performance optimization &mdash; 20&#8211;40% improvement across every role</div>
       <div class="hcred"><span class="ck">&#10003;</span>Led cross-functional teams across US &amp; India</div>
       <div class="hcred"><span class="ck">&#10003;</span>Built Enphase Energy &amp; Sydney Health &mdash; 50K+ users daily</div>
     </div>
+    <p style="font-size:var(--x0);color:var(--tm);letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin-bottom:22px">Engineering mobile apps that scale with real-world impact.</p>
 
     <div class="hact">
       <a href="#projects" class="bp">View Case Studies &#8594;</a>
@@ -428,29 +474,29 @@ footer{padding:var(--s2) var(--s3);border-top:.5px solid var(--bd);display:flex;
         <div class="imet-sub">Enphase Enlighten &amp; Sydney Health</div>
       </div>
       <div class="imet">
-        <span class="imet-num">+25%</span>
+        <span class="imet-num">+25%&#8593;</span>
         <div class="imet-lbl">Engagement Lift</div>
         <div class="imet-sub">via WebSocket + MVVM rewrite</div>
       </div>
       <div class="imet">
-        <span class="imet-num">&#8722;40%</span>
+        <span class="imet-num">&#8722;40%&#8595;</span>
         <div class="imet-lbl">Setup Time Cut</div>
         <div class="imet-sub">SMA installer commissioning</div>
       </div>
       <div class="imet">
-        <span class="imet-num">&#8722;30%</span>
+        <span class="imet-num">&#8722;30%&#8595;</span>
         <div class="imet-lbl">Connectivity Issues</div>
         <div class="imet-sub">BLE/WiFi thread-safe manager</div>
       </div>
     </div>
     <div class="impact-grid rv d2" style="margin-top:0;border-top:none;border-radius:0 0 var(--rl) var(--rl)">
       <div class="imet">
-        <span class="imet-num">+20%</span>
+        <span class="imet-num">+20%&#8593;</span>
         <div class="imet-lbl">App Performance</div>
         <div class="imet-sub">MVC &#8594; MVVM architecture lift</div>
       </div>
       <div class="imet">
-        <span class="imet-num">&#8722;20%</span>
+        <span class="imet-num">&#8722;20%&#8595;</span>
         <div class="imet-lbl">API Latency</div>
         <div class="imet-sub">Server-side caching strategy</div>
       </div>
@@ -507,7 +553,7 @@ footer{padding:var(--s2) var(--s3);border-top:.5px solid var(--bd);display:flex;
         <div class="tcd"><div class="trl">Senior Software Engineer &mdash; IoT</div><div class="tcl">&#9728;&#65039; SMA Solar Technology &middot; Bengaluru</div>
           <ul class="tps">
             <li>Owned SMA Energy app end-to-end (SwiftUI, Combine, MVVM) &mdash; real-time PV monitoring, EV charging, energy forecasting.</li>
-            <li>Architected SMA 360&#176; installer app &mdash; QR onboarding, 5-device discovery.<span class="mb">&#8722;40% setup time</span></li>
+            <li>Led and architected SMA 360&#176; installer app &mdash; QR onboarding, 5-device discovery.<span class="mb">&#8722;40% setup time</span></li>
             <li>Led Sunny Portal registration integration, user invitations, onboarding flows for both consumer and installer.</li>
           </ul>
         </div>
@@ -599,8 +645,8 @@ footer{padding:var(--s2) var(--s3);border-top:.5px solid var(--bd);display:flex;
       </div>
       <div class="abdy">
         <div class="rv"><span class="ey">About Me</span><h2 class="st">Senior engineer who ships, leads, and mentors.</h2></div>
-        <p class="rv d1">11+ years delivering mission-critical mobile apps at scale. I've built apps used by 50K+ daily users &mdash; real-time solar energy monitoring for Enphase Energy, smart installer tools for SMA Solar, and patient health platforms for Legato Health. Not just code &mdash; measurable product outcomes every time.</p>
-        <p class="rv d2">I lead from the front: architecture decisions, code reviews, cross-team alignment, Agile ceremonies, and mentoring junior engineers through pair programming. I've worked with US-based product teams and India-based engineering teams simultaneously.</p>
+        <p class="rv d1">11+ years delivering mission-critical mobile apps at scale. I've owned and shipped apps used by 50K+ daily users &mdash; real-time solar energy monitoring for Enphase Energy, smart installer tools for SMA Solar, and patient health platforms for Legato Health. Not just code &mdash; measurable product outcomes every time.</p>
+        <p class="rv d2">I lead from the front — owning architecture decisions: architecture decisions, code reviews, cross-team alignment, Agile ceremonies, and mentoring junior engineers through pair programming. I've worked with US-based product teams and India-based engineering teams simultaneously.</p>
         <div class="rv d3">
           <p style="font-size:var(--x0);color:var(--tm);text-transform:uppercase;letter-spacing:.1em;margin-bottom:9px;font-weight:600;">Domain Expertise</p>
           <div class="tgs"><span class="tg hi">&#9889; IoT &amp; Energy</span><span class="tg">&#127973; Healthcare</span><span class="tg">&#128722; m-Commerce</span><span class="tg">&#128663; Connected EV</span><span class="tg">&#9728;&#65039; Clean Tech</span><span class="tg">&#128241; Consumer Apps</span></div>
@@ -635,20 +681,20 @@ footer{padding:var(--s2) var(--s3);border-top:.5px solid var(--bd);display:flex;
 
 
 <!-- HIRE ME CTA -->
-<section id="hire" style="background:var(--bg);padding:var(--s5) var(--s3)">
+<section id="hire" style="background:var(--bg2);padding:var(--s5) var(--s3);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)">
   <div class="wrap">
     <div style="max-width:760px;margin:0 auto;text-align:center" class="rv">
       <span class="ey" style="justify-content:center">Available Now</span>
-      <h2 style="font-family:var(--fd);font-size:clamp(2rem,5vw,3.4rem);font-weight:400;letter-spacing:-.02em;line-height:1.1;margin-bottom:16px">
-        Let's build something<br><span style="color:var(--ac)">scalable together.</span>
+      <h2 style="font-family:var(--fd);font-size:clamp(2rem,5vw,3.6rem);font-weight:400;letter-spacing:-.02em;line-height:1.08;margin-bottom:16px">
+        Let's build scalable<br><span style="color:var(--ac)">mobile products together.</span>
       </h2>
       <p style="font-size:var(--x2);color:var(--ts);line-height:1.78;margin-bottom:var(--s2);max-width:520px;margin-left:auto;margin-right:auto">
-        I'm currently open to <strong style="color:var(--tp)">Senior iOS &amp; Lead iOS roles</strong> in product-based companies.<br>
-        Available for immediate opportunities &mdash; remote or Bengaluru.
+        &#128640; I'm currently open to <strong style="color:var(--tp)">Senior iOS &amp; Lead iOS roles</strong>.<br>
+        Available <strong style="color:var(--ok)">immediately</strong> &mdash; product companies, remote or Bengaluru.
       </p>
       <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:var(--s2)">
         <a href="#contact" class="bp" style="font-size:var(--x2);padding:15px 36px">Contact Me &#8594;</a>
-        <a href="mailto:makhija61@gmail.com" class="bs" style="font-size:var(--x2);padding:14px 30px">&#9993;&#65039; makhija61@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#c7aaa6acafaeada6f1f687a0aaa6aeabe9a4a8aa" class="bs" style="font-size:var(--x2);padding:14px 30px">&#9993;&#65039; <span class="__cf_email__" data-cfemail="7518141e1d1c1f144344351218141c195b161a18">[email&#160;protected]</span></a>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
         <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:100px;background:var(--at);color:var(--atx);font-size:var(--x0);font-weight:600">&#10003; Swift &amp; SwiftUI Expert</span>
@@ -701,7 +747,7 @@ footer{padding:var(--s2) var(--s3);border-top:.5px solid var(--bd);display:flex;
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 var H=document.documentElement,tb=document.getElementById('tth'),th=localStorage.getItem('am')||'dark';
 H.dataset.theme=th;tb.textContent=th==='dark'?'🌙':'☀️';
 tb.addEventListener('click',function(){th=H.dataset.theme==='dark'?'light':'dark';H.dataset.theme=th;tb.textContent=th==='dark'?'🌙':'☀️';localStorage.setItem('am',th);});
