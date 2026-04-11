@@ -5,11 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Anil Makhija — Senior iOS Lead Engineer | 11+ Years | Swift, SwiftUI, IoT, Energy, Healthcare | 50K+ Users">
 <title>Anil Makhija — Senior iOS Lead Engineer</title>
+<meta property="og:title" content="Anil Makhija — Senior iOS Lead Engineer">
+<meta property="og:description" content="Performance-focused iOS Engineer. 50K+ users, Swift, SwiftUI, IoT.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2563EB">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
-<style>
-:root{
+<style>:root{
   --fd:'Instrument Serif',Georgia,serif;
   --fb:'DM Sans',system-ui,sans-serif;
   --bg:#0A0A0F;--bg2:#111118;--bg3:#18181f;
@@ -43,15 +46,15 @@ body{font-family:var(--fb);font-size:var(--x2);background:var(--bg);color:var(--
 a{color:inherit;text-decoration:none}
 button{cursor:pointer;font-family:var(--fb);background:none;border:none}
 img{display:block;max-width:100%}
-::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdh);border-radius:2px}
-
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--bdh);border-radius:2px}
 .wrap{max-width:1120px;margin:0 auto;width:100%}
 section{padding:var(--s5) var(--s3)}
 .ey{display:inline-flex;align-items:center;gap:8px;font-size:var(--x0);font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ac);margin-bottom:14px}
 .ey::before{content:'';display:block;width:16px;height:1.5px;background:var(--ac);border-radius:2px;flex-shrink:0}
 .st{font-family:var(--fd);font-size:var(--x5);font-weight:400;letter-spacing:-.02em;line-height:1.08;margin-bottom:16px}
 .ss{font-size:var(--x2);color:var(--ts);line-height:1.78;max-width:560px}
-
 /* Buttons */
 .bp{display:inline-flex;align-items:center;gap:7px;padding:13px 28px;border-radius:100px;background:var(--ac);color:#fff;font-size:var(--x1);font-weight:600;border:none;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(37,99,235,.32);white-space:nowrap;cursor:pointer}
 .bp:hover{background:var(--ach);transform:translateY(-2px);box-shadow:0 6px 28px rgba(37,99,235,.42)}
@@ -59,7 +62,6 @@ section{padding:var(--s5) var(--s3)}
 .bs:hover{border-color:var(--bdh);background:var(--bgh);transform:translateY(-2px)}
 .bg3{display:inline-flex;align-items:center;gap:7px;padding:12px 26px;border-radius:100px;background:transparent;color:var(--tp);font-size:var(--x1);font-weight:500;border:.5px solid var(--bd);transition:all .2s;white-space:nowrap}
 .bg3:hover{border-color:var(--bdh);background:var(--bgc);transform:translateY(-2px)}
-
 /* Nav */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 var(--s3);height:64px;background:rgba(10,10,15,.82);backdrop-filter:blur(24px) saturate(1.5);-webkit-backdrop-filter:blur(24px) saturate(1.5);border-bottom:.5px solid var(--bd);transition:background .3s}
 nav.scrolled{background:rgba(9,9,14,.94)}
@@ -86,7 +88,6 @@ nav.scrolled{background:rgba(9,9,14,.94)}
 .drw a{display:block;padding:14px 4px;font-size:1.1rem;font-weight:500;color:var(--ts);border-bottom:.5px solid var(--bd);transition:color .2s}
 .drw a:last-child{border-bottom:none}
 .drw a:hover{color:var(--ac)}
-
 /* Hero */
 #hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:calc(64px + var(--s4));padding-bottom:var(--s4);padding-left:var(--s3);padding-right:var(--s3);position:relative;overflow:hidden}
 .hbg2{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
@@ -101,29 +102,23 @@ nav.scrolled{background:rgba(9,9,14,.94)}
 .hbadge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:100px;border:.5px solid var(--bd);background:var(--bgc);font-size:var(--x0);font-weight:500;color:var(--ts);margin-bottom:var(--s2);backdrop-filter:blur(8px)}
 .bdot{width:6px;height:6px;border-radius:50%;flex-shrink:0;background:var(--ok);animation:pd 2.5s infinite}
 @keyframes pd{0%,100%{box-shadow:0 0 0 2px rgba(34,197,94,.2)}50%{box-shadow:0 0 0 5px rgba(34,197,94,.07)}}
-
 /* Hero name — BIG and authoritative */
 .hn{font-family:var(--fd);font-size:var(--xh);font-weight:400;letter-spacing:-.04em;line-height:.9;margin-bottom:12px}
 .hn .ac{color:var(--ac)}
-
 /* Punchy tagline */
 .hpunch{font-size:clamp(1.1rem,2.6vw,1.5rem);font-weight:400;color:var(--ts);line-height:1.5;max-width:640px;margin-bottom:20px}
 .hpunch strong{color:var(--tp);font-weight:600}
-
 /* Checkmark credentials */
 .hcreds{display:flex;flex-direction:column;gap:6px;margin-bottom:24px}
 .hcred{display:flex;align-items:center;gap:9px;font-size:var(--x2);color:var(--ts)}
 .hcred .ck{width:18px;height:18px;border-radius:50%;background:var(--ac);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.65rem;color:#fff;font-weight:700}
-
 /* CTA row */
 .hact{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:var(--s2)}
-
 /* Authority strip */
 .auth{padding:var(--s2) 0;border-top:.5px solid var(--bd);display:flex;flex-wrap:wrap;align-items:center;gap:10px}
 .auth-lbl{font-size:var(--x0);color:var(--tm);font-weight:500;text-transform:uppercase;letter-spacing:.08em}
 .auth-co{display:inline-flex;align-items:center;padding:4px 12px;border-radius:6px;background:var(--bgc);border:.5px solid var(--bd);font-size:var(--x0);font-weight:600;color:var(--ts);transition:all .2s}
 .auth-co:hover{border-color:var(--ac);color:var(--ac)}
-
 /* ── IMPACT NUMBERS — dedicated section, BIG ── */
 #impact{background:var(--bg2);border-top:1px solid var(--bd)}
 .impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:var(--s2);border:1px solid var(--bd);border-radius:var(--rl);overflow:hidden;box-shadow:0 6px 40px rgba(0,0,0,.4)}
@@ -161,7 +156,6 @@ nav.scrolled{background:rgba(9,9,14,.94)}
 /* Hover AFTER base rules — correct cascade */
 .imet:hover{background:var(--ag);box-shadow:inset 0 0 0 2px var(--ac)}
 .imet:hover .imet-num{color:var(--ac);transform:scale(1.08);text-shadow:0 0 60px rgba(37,99,235,.55)}
-
 /* ── LEADERSHIP ── */
 #leadership{border-top:.5px solid var(--bd);background:var(--bg3)}
 .lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);margin-top:var(--s3);align-items:start}
@@ -178,17 +172,15 @@ nav.scrolled{background:rgba(9,9,14,.94)}
 .law-em{font-size:1.4rem;flex-shrink:0}
 .law-n{font-size:var(--x1);font-weight:600}
 .law-d{font-size:var(--x0);color:var(--ts);margin-top:1px}
-
 /* ── WHY ME ── */
 #whyme{background:var(--bg2);border-top:1px solid var(--bd)}
-.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:var(--s3)}
+
 .why-card{background:var(--bg);border:.5px solid var(--bd);border-radius:var(--r);padding:clamp(20px,3.5vw,32px);transition:all .3s;display:flex;flex-direction:column;gap:10px;box-shadow:var(--sh)}
 .why-card:hover{border-color:var(--ac);transform:translateY(-4px);box-shadow:0 12px 40px rgba(37,99,235,.14)}
 .why-ico{font-size:1.8rem}
 .why-title{font-family:var(--fd);font-size:var(--x3);font-weight:400}
 .why-desc{font-size:var(--x1);color:var(--ts);line-height:1.7}
 .why-tag{display:inline-flex;padding:3px 10px;border-radius:4px;background:var(--at);color:var(--atx);font-size:var(--x0);font-weight:600;align-self:flex-start}
-
 /* ── ABOUT ── */
 .agrid{display:grid;grid-template-columns:300px 1fr;gap:clamp(28px,6vw,72px);align-items:center;margin-top:var(--s3)}
 .avis{position:relative;aspect-ratio:4/5;border-radius:var(--rl);background:var(--bg2);border:.5px solid var(--bd);overflow:hidden;box-shadow:var(--sh)}
@@ -205,7 +197,6 @@ nav.scrolled{background:rgba(9,9,14,.94)}
 .tg:hover{border-color:var(--ac);color:var(--ac);background:var(--ag)}
 .tg.hi{background:var(--at);border-color:transparent;color:var(--atx)}
 .alinks{display:flex;flex-wrap:wrap;gap:10px}
-
 /* ── SKILLS — outcome-driven ── */
 #skills{border-top:.5px solid var(--bd);background:var(--bg3)}
 .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:var(--s3)}
@@ -216,7 +207,6 @@ nav.scrolled{background:rgba(9,9,14,.94)}
 .sc .stag{font-size:var(--x0);color:var(--atx);font-weight:600;margin-bottom:10px;display:block}
 .sps{display:flex;flex-wrap:wrap;gap:5px}
 .sp{padding:3px 9px;border-radius:5px;background:var(--bg2);border:.5px solid var(--bd);font-size:var(--x0);font-weight:500;color:var(--ts)}
-
 /* ── EXPERIENCE ── */
 .tl{margin-top:var(--s3);display:flex;flex-direction:column;position:relative}
 /* LEFT GRADIENT TIMELINE */
@@ -283,11 +273,9 @@ nav.scrolled{background:rgba(9,9,14,.94)}
   font-size:.72rem;font-weight:600;margin-left:6px;white-space:nowrap;
   vertical-align:middle;
 }
-
 /* ── PROJECTS / CASE STUDIES ── */
-#projects{background:var(--bg2);border-top:1px solid var(--bd)}
+#projects{background:var(--bg);border-top:1px solid var(--bd)}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:var(--s3)}
-.pc{background:var(--bg);border:.5px solid var(--bd);border-radius:var(--rl);overflow:hidden;display:flex;flex-direction:column;transition:all .3s;box-shadow:var(--sh)}
 /* Cards: accent top stripe on hover */
 .pc::after{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--ac),transparent);opacity:0;transition:opacity .3s}
 .pc{position:relative}
@@ -336,7 +324,6 @@ nav.scrolled{background:rgba(9,9,14,.94)}
 .psb{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:100px;background:var(--ac);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.04em;border:none;transition:background .2s,transform .15s;text-decoration:none;white-space:nowrap}
 .psb:hover{background:var(--ach);transform:scale(1.04)}
 .psb svg{width:9px;height:9px;fill:currentColor;flex-shrink:0}
-
 /* Storytelling case study block */
 .cblk{background:var(--bgc);border:.5px solid var(--bd);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
 .cr{display:flex;gap:6px;align-items:flex-start}
@@ -350,14 +337,12 @@ nav.scrolled{background:rgba(9,9,14,.94)}
 .res-items{display:flex;flex-direction:column;gap:3px}
 .sr{display:flex;align-items:flex-start;gap:5px}
 .sa{color:var(--ok);font-size:.72rem;margin-top:2px;flex-shrink:0}
-
 .pmts{display:flex;gap:14px;padding-top:10px;border-top:.5px solid var(--bd)}
 .pm{display:flex;flex-direction:column;gap:1px}
 .pmv{font-family:var(--fd);font-size:var(--x3);font-weight:400;color:var(--ac);line-height:1.1}
 .pml{font-size:var(--x0);font-weight:500;color:var(--tm);text-transform:uppercase;letter-spacing:.05em}
 .ptch{display:flex;flex-wrap:wrap;gap:5px}
 .tch{padding:3px 8px;border-radius:4px;font-size:var(--x0);font-weight:500;background:var(--bg2);border:.5px solid var(--bd);color:var(--ts)}
-
 /* ── CONTACT ── */
 #contact{background:var(--bg3)}
 .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,6vw,64px);align-items:start;margin-top:var(--s3)}
@@ -376,7 +361,6 @@ nav.scrolled{background:rgba(9,9,14,.94)}
 .ffd textarea{height:116px}
 .fmsg{font-size:var(--x1);color:var(--ok);display:none;padding:10px 14px;border-radius:9px;background:rgba(34,197,94,.08);border:.5px solid rgba(34,197,94,.2)}
 .fmsg.show{display:block}
-
 /* Footer */
 footer{padding:var(--s2) var(--s3);border-top:.5px solid var(--bd);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:var(--bg)}
 .fl{font-size:var(--x0);color:var(--tm)}
@@ -384,12 +368,12 @@ footer{padding:var(--s2) var(--s3);border-top:.5px solid var(--bd);display:flex;
 .fls{display:flex;gap:18px;flex-wrap:wrap}
 .fls a{font-size:var(--x0);color:var(--tm);transition:color .2s}
 .fls a:hover{color:var(--ac)}
-
 /* Reveal */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
 .rv.in{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
-
+.d1{transition-delay:.1s}
+.d2{transition-delay:.2s}
+.d3{transition-delay:.3s}
 /* Open to */
 #about{border-top:.5px solid var(--bd);background:var(--bg)}
 #looking{border-top:.5px solid var(--bd);background:var(--bg2)}
@@ -401,7 +385,6 @@ footer{padding:var(--s2) var(--s3);border-top:.5px solid var(--bd);display:flex;
 .lf-card strong{color:var(--tp);font-weight:600}
 .lf-qt{font-family:var(--fd);font-size:var(--x4);line-height:1.35;color:var(--tp)}
 .lf-qt span{color:var(--ac)}
-
 /* Responsive */
 @media(max-width:768px){
   .nlinks,.ncta{display:none}.hbg{display:flex}
@@ -431,9 +414,8 @@ footer{padding:var(--s2) var(--s3);border-top:.5px solid var(--bd);display:flex;
 }
 @media(min-width:1200px){
   .sgrid,.pgrid{grid-template-columns:repeat(3,1fr)}
-  .why-grid{grid-template-columns:repeat(4,1fr)}
+  
 }
-
 /* featured card removed */
 .pc-feat{
   grid-column:1 / -1;
@@ -466,9 +448,7 @@ footer{padding:var(--s2) var(--s3);border-top:.5px solid var(--bd);display:flex;
   justify-content:center;
 }
 .pc-feat .ptit{font-size:var(--x4)}
-.pc-feat .pdsc{font-size:var(--x2);line-height:1.75}
-
-</style>
+.pc-feat .pdsc{font-size:var(--x2);line-height:1.75}</style>
 </head>
 <body>
 
@@ -501,7 +481,7 @@ footer{padding:var(--s2) var(--s3);border-top:.5px solid var(--bd);display:flex;
 </div>
 
 <!-- HERO — short, punchy, authoritative -->
-<section id="hero">
+<section id="hero" style="background:var(--bg)">
   <div class="hbg2"><div class="gbg"></div><div class="orb o1"></div><div class="orb o2"></div></div>
   <div class="wrap hc">
     <div class="hbadge"><span class="bdot"></span>Open to Senior &amp; Lead iOS Roles &middot; Bengaluru</div>
@@ -529,6 +509,7 @@ footer{padding:var(--s2) var(--s3);border-top:.5px solid var(--bd);display:flex;
 
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap"><span style="display:inline-flex;align-items:center;gap:5px;font-size:var(--x1);color:var(--ok);font-weight:600"><span style="width:6px;height:6px;border-radius:50%;background:var(--ok);display:inline-block;animation:pd 2.5s infinite"></span>Open to Senior iOS &amp; Lead roles</span><span style="font-size:var(--x0);color:var(--tm)">&mdash; Available immediately &mdash; Bengaluru / Remote</span></div>
 <div class="auth">
+      <span style="display:inline-flex;align-items:center;gap:6px;font-size:var(--x0);font-weight:600;color:var(--ok);padding:3px 10px;border-radius:100px;background:rgba(34,197,94,.1);border:.5px solid rgba(34,197,94,.25)"><span style="width:5px;height:5px;border-radius:50%;background:var(--ok);display:inline-block;animation:pd 2.5s infinite"></span>Available Now</span>
       <span class="auth-lbl">Trusted by</span>
       <span class="auth-co">&#9889; Enphase Energy</span>
       <span class="auth-co">&#9728;&#65039; SMA Solar</span>
@@ -635,7 +616,7 @@ footer{padding:var(--s2) var(--s3);border-top:.5px solid var(--bd);display:flex;
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience">
+<section id="experience" style="background:var(--bg2);border-top:.5px solid var(--bd)">
   <div class="wrap">
     <span class="ey rv">Work Experience</span>
     <h2 class="st rv">11+ years of measurable impact.</h2>
