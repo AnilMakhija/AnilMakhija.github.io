@@ -352,6 +352,7 @@
           <div><dt>WebSocket push over REST polling</dt><dd>Live data arrives as it changes instead of on a timer, at the cost of managing connection lifecycle, reconnects and partial syncs.</dd></div>
           <div><dt>Core Data over Realm for the offline cache</dt><dd>It keeps the stack native with fewer dependencies and predictable migrations, at the cost of more boilerplate.</dd></div>
           <div><dt>Actors over manual queues</dt><dd>Isolation is expressed in the type system rather than by convention, but APIs become asynchronous and re-entrancy needs care.</dd></div>
+          <div><dt>AsyncSequence over callback-heavy event handling</dt><dd>Peripheral events are consumed as an ordered stream of typed values instead of nested delegate callbacks, at the cost of bridging CoreBluetooth’s delegate API and managing stream lifetime.</dd></div>
           <div><dt>SPM modules with protocol contracts</dt><dd>Teams can work in parallel with clear boundaries, at the cost of upfront contract design and build configuration.</dd></div>
         </dl>
       </article>
@@ -393,7 +394,7 @@
           <div class="job-top"><h3>Senior Software Engineer, iOS &amp; IoT</h3><span class="job-date">Jul 2025 – Dec 2025</span></div>
           <p class="job-org">SMA Solar Technology AG · Bengaluru</p>
           <ul class="bullets">
-            <li>Contributed to the SMA Energy consumer application and SMA 360° installer application, implementing connected-device workflows and iOS features across the two products.</li>
+            <li>Contributed to SMA Energy (consumer) and SMA 360° (installer) iOS applications. Developed adaptive SwiftUI layouts for SMA Energy across iPhone and iPad, alongside BLE and Wi-Fi commissioning workflows for SMA 360°.</li>
             <li>SMA 360°: BLE and Wi-Fi workflows including multi-device discovery for up to five inverters, Wi-Fi provisioning through BLE writes, and OTA firmware updates.</li>
             <li>Designed concurrent multi-device BLE management with actors and TaskGroup.</li>
             <li>Managed releases through Jenkins and Fastlane with SwiftLint.</li>
@@ -492,12 +493,26 @@
         <li>Mentored engineers through code reviews and technical discussions.</li>
         <li>Worked with product, backend, firmware, QA and design teams.</li>
         <li>Coordinated delivery across distributed engineering teams.</li>
-        <li>Focused on maintainable architecture, reliable releases and engineering quality.</li>
+        <li>Kept CI quality gates (XCTest, XCUITest and SwiftLint on Jenkins) in place for every change.</li>
       </ul>
+      <h3 class="sub-h" style="margin-top:26px">Examples</h3>
+      <dl class="facts">
+        <div><dt>Challenge</dt><dd>A monolithic iOS codebase made parallel work by six engineers difficult.</dd></div>
+        <div><dt>Decision</dt><dd>Introduce modular feature boundaries with protocol-based contracts.</dd></div>
+        <div><dt>Action</dt><dd>Decomposed the app into 6 SPM feature modules and managed the build configuration with Tuist.</dd></div>
+        <div><dt>Outcome</dt><dd>Clearer ownership boundaries, so engineers could deliver features in parallel.</dd></div>
+      </dl>
+      <dl class="facts" style="margin-top:14px">
+        <div><dt>Challenge</dt><dd>Concurrent BLE operations on several devices could leave shared device state inconsistent.</dd></div>
+        <div><dt>Decision</dt><dd>Isolate device state in an actor and expose telemetry as an AsyncSequence.</dd></div>
+        <div><dt>Action</dt><dd>Architected the actor-isolated device manager and led its code reviews.</dd></div>
+        <div><dt>Outcome</dt><dd>One owner for device state, with Thread Sanitizer used during testing to check for data races.</dd></div>
+      </dl>
     </div>
     <div id="awards" aria-labelledby="awards-title" role="group">
       <h3 id="awards-title" class="sub-h">Awards and recognition</h3>
       <ul class="award-list">
+        <!-- DATES TO CONFIRM: UST end / Legato start (Aug 2020 overlap) appear in the Experience section below; update with resume source _resume-src/resume.html -->
         <li><strong>Extraordinary Client Service</strong><span>Encora · 2025</span></li>
         <li><strong>Living Our Values</strong><span>Encora · March 2023</span></li>
         <li><strong>GoAbove Impact Award</strong><span>Legato Health · 2022</span></li>

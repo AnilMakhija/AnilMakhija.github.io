@@ -74,12 +74,12 @@ i.n { font-style: italic; }
 
 <h2>Selected Projects</h2>
 <div class="proj">
-<div class="t">SMA Energy App <i>— Consumer energy application for iPhone and iPad, SMA Solar Technology AG</i></div>
-<div>Stack: <b>Swift</b>, <b>SwiftUI</b>, <b>Combine</b>, <b>BLE</b>, <b>WiFi</b>, <b>MVVM</b> &nbsp;|&nbsp; Contribution: connected-device onboarding over <b>BLE</b>/<b>WiFi</b>, <b>Jenkins</b>/<b>Fastlane</b> <b>CI/CD</b></div>
+<div class="t">SMA Energy — Consumer Energy Application <i>— iPhone and iPad, SMA Solar Technology AG</i></div>
+<div>Stack: <b>Swift</b>, <b>SwiftUI</b>, <b>Combine</b>, <b>BLE</b>, <b>WiFi</b>, <b>MVVM</b> &nbsp;|&nbsp; Contribution: SwiftUI-based consumer energy experiences with adaptive iPhone and iPad layouts and <b>BLE</b>/<b>WiFi</b> connected-device integration</div>
 </div>
 <div class="proj">
-<div class="t">SMA 360° App <i>— Installer and commissioning application for iPhone, SMA Solar Technology AG</i></div>
-<div>Stack: <b>Swift</b>, <b>SwiftUI</b>, <b>BLE</b>, <b>WiFi</b>, OTA updates, <b>Swift Concurrency</b> &nbsp;|&nbsp; Contribution: multi-device discovery, <b>WiFi</b> provisioning over <b>BLE</b>, OTA firmware workflows — cut installer commissioning time ~40%</div>
+<div class="t">SMA 360° — Installer Application <i>— iPhone, SMA Solar Technology AG</i></div>
+<div>Stack: <b>Swift</b>, <b>SwiftUI</b>, <b>BLE</b>, <b>WiFi</b>, OTA updates, <b>Swift Concurrency</b> &nbsp;|&nbsp; Contribution: installer-focused commissioning workflows — multi-device <b>BLE</b> discovery, <b>WiFi</b> provisioning and OTA firmware updates</div>
 </div>
 <div class="proj">
 <div class="t">Enphase Enlighten <i>— Cloud-connected IoT smart-energy platform serving 50K+ users (Encora / Enphase Energy)</i></div>
@@ -91,8 +91,9 @@ i.n { font-style: italic; }
 <div class="job-head"><span class="l">Senior Software Engineer – iOS &amp; IoT — <span class="co">SMA Solar Technology AG</span></span><span class="d">Jul 2025 – Dec 2025</span></div>
 <div class="job-sub">SMA Energy App (consumer, iPhone &amp; iPad) | SMA 360° App (installer, iPhone) | Bengaluru, India</div>
 <ul>
-<li>Contributed to the SMA Energy consumer application and the SMA 360° installer application, implementing connected-device workflows and iOS features across the two products.</li>
-<li>SMA 360°: <b>BLE</b>/<b>WiFi</b> device communication — multi-device discovery (up to 5 inverters), <b>WiFi</b> provisioning via <b>BLE</b> characteristic writes, and OTA firmware updates — cutting installer commissioning time ~40%.</li>
+<li>Contributed to SMA Energy (consumer) and SMA 360° (installer) iOS applications. Developed adaptive <b>SwiftUI</b> layouts for SMA Energy across iPhone and iPad, alongside <b>BLE</b>/<b>WiFi</b> commissioning workflows for SMA 360°.</li>
+<!-- PENDING CONFIRMATION: "reducing installer commissioning time ~40%" removed until baseline, period and method are confirmed -->
+<li>SMA 360°: multi-device <b>BLE</b> discovery (up to 5 inverters), <b>WiFi</b> provisioning via <b>BLE</b> characteristic writes, and OTA firmware updates — streamlining multi-device commissioning through concurrent discovery and provisioning workflows.</li>
 <li>Architected concurrent multi-device <b>BLE</b> management using <b>Swift Concurrency</b> (<b>Actors</b>, <b>TaskGroup</b>) with actor-isolated device state; used <b>Thread Sanitizer</b> during testing to check for data races in concurrent device operations; collaborated with firmware teams on GATT specs and managed App Store releases via <b>Jenkins</b>/<b>Fastlane CI/CD</b> with <b>SwiftLint</b>-enforced code standards.</li>
 </ul>
 </div>
@@ -104,15 +105,18 @@ i.n { font-style: italic; }
 <li>Led a 6-member engineering team building Enphase's connected smart energy platform — <b>BLE</b>/<b>WiFi</b> multi-device management, real-time IoT telemetry via <b>WebSocket</b>/<b>MQTT</b>, OTA firmware delivery, and offline-first <b>Core Data</b> sync — serving 50K+ users.</li>
 <li>Architected an Actor-isolated <b>BLE</b> device manager and <b>AsyncSequence</b> telemetry pipeline (raw peripheral callbacks to typed <b>SwiftUI</b> state); used <b>Thread Sanitizer</b> during testing to check for data races in concurrent device operations; resolved O(n²) chart-rendering bottlenecks associated with high-frequency IoT data.</li>
 <li>Decomposed a monolithic codebase into 6 <b>SPM</b> feature modules with protocol-based API contracts, using <b>Tuist</b> and <b>xcodebuild</b> to manage modular build configuration, enabling parallel team delivery; enforced <b>MVVM</b>/<b>Clean Architecture</b> with CI-gated <b>TDD</b> (<b>XCTest</b>, <b>XCUITest</b>) and <b>SwiftLint</b> via <b>Jenkins</b> pipelines; built <b>React Native</b> (<b>TypeScript</b>) components alongside native iOS, exposing <b>BLE</b>/biometric capabilities via custom Native Modules for cross-platform parity.</li>
-<li>Implemented production-grade security — <b>Keychain</b>, biometric auth, <b>OAuth2</b>/<b>JWT</b>, certificate pinning, <b>AES-256</b> encryption; improved app performance 20%, reduced connectivity incidents 30%, and increased user engagement 25%; mentored 6 engineers through code reviews and architecture coaching.</li>
+<li>Implemented production-grade security — <b>Keychain</b>, biometric auth, <b>OAuth2</b>/<b>JWT</b>, certificate pinning, <b>AES-256</b> encryption; optimized high-frequency data processing and improved application responsiveness; improved connected-device reliability through <b>BLE</b> connection handling and device-state management; mentored 6 engineers through code reviews and architecture coaching.</li>
+<!-- PENDING CONFIRMATION: removed "improved app performance 20%, reduced connectivity incidents 30%, increased user engagement 25%" until baselines, periods, methods and individual-versus-team scope are confirmed -->
 </ul>
 </div>
 
 <div class="job">
+<!-- DATES TO CONFIRM: Legato start (Aug 2020) overlaps UST end (Aug 2020). Update both entries and index.html together. -->
 <div class="job-head"><span class="l">Software Engineer – iOS &amp; React Native — <span class="co">Legato Health Technologies</span></span><span class="d">Aug 2020 – Jul 2022</span></div>
 <div class="job-sub">Sydney Health — Consumer healthcare and insurance benefits application serving 10K+ users | Bengaluru, India</div>
 <ul>
-<li>Built Sydney Health (<b>React Native</b> + <b>SwiftUI</b>/<b>MVVM</b>) — insurance benefit management, claims, and identity verification, with full biometric/<b>Keychain</b>/<b>OAuth2</b> security; delivered cross-platform iOS + Android features from a shared <b>TypeScript</b> codebase, driving a 15% engagement increase through data-driven UX improvements.</li>
+<li>Built Sydney Health (<b>React Native</b> + <b>SwiftUI</b>/<b>MVVM</b>) — insurance benefit management, claims, and identity verification, with full biometric/<b>Keychain</b>/<b>OAuth2</b> security; delivered cross-platform iOS + Android features from a shared <b>TypeScript</b> codebase, contributing to user-experience improvements.</li>
+<!-- PENDING CONFIRMATION: removed "15% engagement increase" -->
 </ul>
 </div>
 
@@ -120,7 +124,8 @@ i.n { font-style: italic; }
 <div class="job-head"><span class="l">Senior Software Engineer – iOS — <span class="co">UST (Client: Legato Health Technologies)</span></span><span class="d">Jan 2020 – Aug 2020</span></div>
 <div class="job-sub">Bengaluru, India</div>
 <ul>
-<li>Delivered 3 production iOS features using <b>MVVM</b> and <b>TDD</b> — 100% on time, 2 weeks ahead of schedule — collaborating cross-functionally under Agile constraints.</li>
+<li>Delivered 3 production iOS features using <b>MVVM</b> and <b>TDD</b>, collaborating cross-functionally under Agile constraints.</li>
+<!-- PENDING CONFIRMATION: removed "100% on time, 2 weeks ahead of schedule" -->
 </ul>
 </div>
 
@@ -128,7 +133,7 @@ i.n { font-style: italic; }
 <div class="job-head"><span class="l">iOS Developer – Synoverge Technologies / AIS Technolabs — <span class="co">Early Career</span></span><span class="d">Aug 2014 – Nov 2019</span></div>
 <div class="job-sub">VFS Global, Roquette App (Synoverge) | Core ML/Unity apps (AIS Technolabs) | Ahmedabad, India</div>
 <ul>
-<li>Shipped 10+ cross-platform apps (iOS + Android via Cordova) and 13+ native iOS apps using <b>Swift</b>, Objective-C, JavaScript, <b>Realm</b>, and Core ML; 3 apps live on the App Store with 30% faster load times through performance optimisation — building the engineering foundations behind 11+ years of continued growth.</li>
+<li>Shipped 10+ cross-platform apps (iOS + Android via Cordova) and 13+ native iOS apps using <b>Swift</b>, Objective-C, JavaScript, <b>Realm</b>, and Core ML; 3 apps live on the App Store, with performance optimisation of app loading — building the engineering foundations behind 11+ years of continued growth.</li>
 </ul>
 </div>
 
@@ -136,7 +141,7 @@ i.n { font-style: italic; }
 <div class="edu">
 <p>Master of Computer Applications (M.C.A.) — Hemchandracharya North Gujarat University | Aug 2011 – May 2014</p>
 <p>Certification: Professional Scrum Master (PSM I)</p>
-<p>Recognition: Encora Inc – Extraordinary Client Service (2025), Living Our Values (2023); Legato Health Technologies – GoAbove Impact Award (2022), Team Player (2022), Individual Contributor (2021).</p>
+<p>Recognition: Encora Inc – Extraordinary Client Service (2025), Living Our Values (March 2023); Legato Health Technologies – GoAbove Impact Award (2022), Team Player (2022), Individual Contributor (2021).</p>
 </div>
 </body>
 </html>
