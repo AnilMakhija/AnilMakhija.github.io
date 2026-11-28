@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /_resume-src/
 
 Sitemap: https://anilmakhija.github.io/sitemap.xml
